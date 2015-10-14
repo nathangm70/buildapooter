@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build-A-Pooter</title>
+  <link rel="stylesheet" href="../stylesheets/main.css">
+</head>
+<body>`
+<div id="wrapper">
+  <div id="navWrap">
+    <div id="header">
+      <h1>Build-A-Pooter</h1>
+    </div>
+      <% include templates/navbar.ejs %>
+    <!--
+    <div id="navMenu">
+      <ul>
+        <li>Menu
+          <ul>
+            <li><a href="index.html"> Home</a></li>
+            <li><a href="buildAPooter.html">Build-A-Pooter</a></li>
+            <li><a href="builds.html">Saved Builds</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li class="nav"><a href="login.html">Login</a></li>
+            <li ><a href="cart.html">Shopping Cart</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  -->
+  <div id="container">
+    <p>
+      Build a computer quick and easy!<br>
+      Select components of a computer piece-by-piece until your build is complete.<br>
+      Or view users saved builds and buy or modify one of their builds into your own.<br>
+    </p>
+    <div id="form">
+      <form>
+        <select>
+          <option value="motherboard">Motherboard</option>
+          <option value="ram">Ram</option>
+          <option value="graphicsCards">Graphics Card</option>
+          <option value="computerCase">Computer Case</option>
+          <option value="CPU">Processor</option>
+          <option value="hardDrive">Hard Drives</option>
+          <option value="discDrive">Disc Drive</option>
+          <option value="powerSupply">Power Supply</option>
+        </select>
+        <input type="submit" value="Search">
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Build-A-Pooter</title>
+	<link rel="stylesheet" href="../stylesheets/main.css">
+</head>
+<body>
+<div id="wrapper">
+	<div id="navWrap">
+		<div id="header">
+			<h1>Build-A-Pooter</h1>
+		</div>
+		<% include templates/navbar.ejs %>
+        <!--
+		<div id="navMenu">
+			<ul>
+				<li>Menu
+					<ul>
+						<li><a href="index.html"> Home</a></li>
+						<li><a href="buildAPooter.html">Build-A-Pooter</a></li>
+						<li><a href="builds.html">Saved Builds</a></li>
+						<li><a href="about.html">About us</a></li>
+						<li class="nav"><a href="login.html">Login</a></li>
+						<li ><a href="cart.html">Shopping Cart</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	-->
+	<div id="container">
+		<h1 class="sub">Select your parts:</h1>
+		<div id="parts">
+			<table align="center">
+				<tr>
+					<td>Computer Case</td>
+					<td></td>
+                    <td><form action="/buildAPooter" method="post"><input type="hidden" value="Computer Case" name="search"><input type="submit" value="Select"></form></td>
+				</tr>
+				<tr>
+					<td>Mother Board</td>
+					<td></td>
+					<!--<td><button type="button">Select</button></td>-->
+                    <td><form><input type="hidden" value="Mother Board" name="search"><input type="submit" value="Select"></form></td>
+				</tr>
+				<tr>
+					<td>Ram</td>
+					<td></td>
+					<!--<td><button type="button">Select</button></td>-->
+                    <td><form><input type="hidden" value="Ram" name="search"><input type="submit" value="Select"> </form></td>
+				</tr>
+				<tr>
+					<td>Graphics Card</td>
+					<td></td>
+					<!--<td><button type="button">Select</button></td>-->
+                    <td><form><input type="hidden" value="Graphics Card" name="search"><input type="submit" value="Select"> </form></td>
+				</tr>
+				<tr>
+					<td>Hard Drive</td>
+					<td></td>
+					<!--<td><button type="button">Select</button></td>-->
+                    <td><form><input type="hidden" value="Hard Drive" name="search"><input type="submit" value="Select"> </form></td>
+				</tr>
+				<tr>
+					<td>Power Supply</td>
+					<td></td>
+					<!--<td><button type="button">Select</button></td>-->
+                    <td><form><input type="hidden" value="Power Supply" name="search"><input type="submit" value="Select"> </form></td>
+				</tr>
+				<tr>
+					<td>Disc Drive</td>
+					<td></td>
+					<!--<td><button type="button">Select</button></td>-->
+                    <td><form><input type="hidden" value="Disc Drive" name="search"><input type="submit" value="Select"> </form></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>
