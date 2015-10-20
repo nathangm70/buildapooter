@@ -2,9 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var itemSearchHelper = require('../ItemSearch/AmazonItemSearcher');
-
 var NewCompCase = require('../Objects/ComputerCase');
-
 var tempRes, tempReq;
 
 //do a console log i really dunno what is happening here
@@ -43,7 +41,7 @@ function ItemSearchCallback(err, results){
     //console.log(compCases[0]);
     //now that we have pulled about 1 page worth of results we need to go ahead and move to another page where we can display this all to the user now
     //do the redirect its probably garbo 0
-    tempRes.redirect('/'); //I think this is really bad
+    //tempRes.redirect('/'); //I think this is really bad
 }
 
 module.exports = router;
