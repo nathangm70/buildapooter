@@ -14,6 +14,8 @@ var itemDisplay = require('./routes/itemDisplay');
 
 var app = express();
 
+var session = require('client-sessions');
+
 //app.local.computerParts = null;
 
 // view engine setup
@@ -34,6 +36,9 @@ app.use('/createAccount', createAccount);
 app.use('/login', login);
 app.use('/builds', builds);
 app.use('/itemDisplay', itemDisplay);
+
+//setup session information
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
