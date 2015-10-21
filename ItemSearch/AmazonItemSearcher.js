@@ -12,10 +12,12 @@
 var util = require('util');
 var OperationHelper = require('apac').OperationHelper;
 
+var awsCredentials = require('../../amazonInfo.json');
+
 var searchHelper = new OperationHelper({
-    awsId: 'AKIAIOV4S2WL6Y2OBFEA',
-    awsSecret: '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',
-    assocId: '8172-6984-6815',
+    awsId: awsCredentials.awsId,
+    awsSecret: awsCredentials.awsSecret,
+    assocId: awsCredentials.assocId,
     //here is where you would put xml2jsOptions if you wanted something custom i dont have anything in here atm
     version: '2013-08-01'
 });
