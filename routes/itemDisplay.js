@@ -1,20 +1,16 @@
-/**
- * Created by natha on 2015-10-20.
- */
-
 var express = require('express');
 var router = express.Router();
 
-/* Get request */
-router.get('/', function(req, res){
-    res.render('itemDisplay',{
-        //add extra variables here to use with script tags
-    });
+/* GET home page. */
+router.get('/', function(req, res, next) {
+    res.render('itemDisplay',
+        { title: 'Build A Pooter' });
 });
 
-/* Post request */
 router.post('/', function(req, res){
-    res.render('itemDisplay',{
-
-    });
+    console.log('what did we pick');
+    //get the item here
+    console.log(req.body.selectedPart);
 });
+
+module.exports = router;
