@@ -21,45 +21,70 @@
 					<td></td>
                     <td><form action="/buildAPooter" method="post"><input type="hidden" value="Computer Case" name="search"><input type="submit" value="Select"></form></td>
 				</tr>
+
 				<tr>
 					<td>Mother Board</td>
 					<td></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Mother Board" name="search"><input type="submit" value="Select"></form></td>
+                    <td><form action="/buildAPooter" method="post"><input type="hidden" value="Mother Board" name="search"><input type="submit" value="Select"></form></td>
 				</tr>
 				<tr>
 					<td>Ram</td>
 					<td></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Ram" name="search"><input type="submit" value="Select"> </form></td>
+                    <td><form action="/buildAPooter" method="post"><input type="hidden" value="Ram" name="search"><input type="submit" value="Select"> </form></td>
 				</tr>
 				<tr>
 					<td>Graphics Card</td>
 					<td></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Graphics Card" name="search"><input type="submit" value="Select"> </form></td>
+                    <td><form action="/buildAPooter" method="post"><input type="hidden" value="Graphics Card" name="search"><input type="submit" value="Select"> </form></td>
 				</tr>
 				<tr>
 					<td>Hard Drive</td>
 					<td></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Hard Drive" name="search"><input type="submit" value="Select"> </form></td>
+                    <td><form action="/buildAPooter" method="post"><input type="hidden" value="Hard Drive" name="search"><input type="submit" value="Select"> </form></td>
 				</tr>
 				<tr>
 					<td>Power Supply</td>
 					<td></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Power Supply" name="search"><input type="submit" value="Select"> </form></td>
+                    <td><form action="/buildAPooter" method="post"><input type="hidden" value="Power Supply" name="search"><input type="submit" value="Select"> </form></td>
 				</tr>
 				<tr>
 					<td>Disc Drive</td>
 					<td></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Disc Drive" name="search"><input type="submit" value="Select"> </form></td>
+                    <td><form action="/buildAPooter" method="post"><input type="hidden" value="Disc Drive" name="search"><input type="submit" value="Select"> </form></td>
 				</tr>
 			</table>
+            <BR>
+            <div id="amazon">
+                <form method="GET" action="http://www.amazon.ca/gp/aws/cart/add.html">
+                    <input type="image" name="add" src="http://juniortraveller.com/wp-content/uploads/CheckoutAmazon-1.png" />
+                    <input type="hidden" name="AWSAccessKeyId" value="awsCredentials.awsId" /><br/>
+                    <input type="hidden" name="AssociateTag" value="awsCredentials.assocId" /><br/>
+                    <input type="hidden" name="ASIN.1" value="B0049MPQA4"/><br/>
+                    <input type="hidden" name="Quantity.1" value="1"/><br/>
+                    <input type="hidden" name="ASIN.2" value=""/><br/>
+                    <input type="hidden" name="Quantity.2" value="1"/><br/>
+                    <input type="hidden" name="ASIN.3" value=""/><br/>
+                    <input type="hidden" name="Quantity.3" value="1"/><br/>
+                    <input type="hidden" name="ASIN.4" value=""/><br/>
+                    <input type="hidden" name="Quantity.4" value="1"/><br/>- add to cart pulling items picked
+                    <input type="hidden" name="ASIN.5" value=""/><br/>
+                    <input type="hidden" name="Quantity.5" value="1"/><br/>
+                    <input type="hidden" name="ASIN.6" value=""/><br/>
+                    <input type="hidden" name="Quantity.6" value="1"/><br/>
+                    <input type="hidden" name="ASIN.7" value=""/><br/>
+                    <input type="hidden" name="Quantity.7" value="1"/><br/>
+                </form>
+            </div>
 		</div>
+        </div>
 	</div>
 </div>
+
 </body>
 </html>

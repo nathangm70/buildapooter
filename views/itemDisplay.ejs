@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Build-A-Pooter</title>
+		<link rel="stylesheet" href="../stylesheets/main.css">
+	</head>
+	<body>
+		<% if(items) { %>
+
+				<% for(var i = 0; i < items.length; i++) { %>
+					<div style="border: solid thick black">
+						<form method="post" action="itemDisplay">
+							<p><%= items[i].title %></p>
+							<img src="<%= items[i].image %>" />
+							<input type="hidden" value="<%= items[i].title %> " name="selectedPart">
+							<input type="submit" value="Select">
+						</form>
+					</div>
+
+				<% } %>
+		<% } %>
+	</body>
+</html>
