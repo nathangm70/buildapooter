@@ -25,7 +25,7 @@ var searchHelper = new OperationHelper({
 //now this is the fucntion where the magic will be happening
 function searchForItemNamed(searchWords, callBackFunction){
     //we are going to execute an item search here and set the passed in function to the ball the callback function we want to use
-    searchHelper.execute('ItemSearch', {'SearchIndex': 'All', 'Keywords': searchWords, 'ResponseGroup': 'ItemAttributes, Offers, Images'}, callBackFunction);
+    searchHelper.execute('ItemSearch', {'SearchIndex': 'Electronics', 'Keywords': searchWords, 'ResponseGroup': 'ItemAttributes, Offers, Images'}, callBackFunction);
 }
 
 module.exports.searchForItemNamed = searchForItemNamed;
