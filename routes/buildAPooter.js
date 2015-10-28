@@ -5,9 +5,10 @@ var itemSearchHelper = require('../ItemSearch/AmazonItemSearcher');
 var NewCompCase = require('../Objects/ComputerCase');
 
 /* GET home page. */
+var awsCredentials = require('../../amazonInfo.json');
 router.get('/', function(req, res, next) {
     res.render('buildAPooter',
-        { title: 'Build A Pooter' });
+        { title: 'Build A Pooter', awsId: awsCredentials.awsId, awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId });
 });
 
 router.post('/', function(req, res){
