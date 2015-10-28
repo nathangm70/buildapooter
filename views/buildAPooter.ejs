@@ -18,44 +18,93 @@
 			<table align="center">
 				<tr>
 					<td>Computer Case</td>
-					<td></td>
-                    <td><form action="/buildAPooter" method="post"><input type="hidden" value="Computer Case" name="search"><input type="submit" value="Select"></form></td>
+					<td><% if(computercase){ %>
+						<img src="<%= computercase.smallImage %>"/> <%= computercase.partName %>
+						<% } %></td>
+                    <td>
+                        <form action="/buildAPooter" method="post">
+                            <input type="hidden" value="Computer Case" name="search">
+                            <input type="submit" value="Select">
+                        </form>
+                    </td>
 				</tr>
 				<tr>
 					<td>Mother Board</td>
-					<td></td>
+					<td><% if(motherboard){ %>
+						<img src="<%= motherboard.smallImage %>"/> <%= motherboard.partName %>
+						<% } %></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Mother Board" name="search"><input type="submit" value="Select"></form></td>
+                    <td>
+                        <form action="/buildAPooter" method="post">
+                            <input type="hidden" value="Mother Board" name="search">
+                            <input type="submit" value="Select">
+                        </form>
+                    </td>
 				</tr>
 				<tr>
 					<td>Ram</td>
-					<td></td>
+					<td><% if(ram){ %>
+						<img src="<%= ram.smallImage %>"/> <%= ram.partName %>
+						<% } %></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Ram" name="search"><input type="submit" value="Select"> </form></td>
+                    <td>
+                        <form action="/buildAPooter" method="post"
+                                ><input type="hidden" value="Ram" name="search">
+                            <input type="submit" value="Select">
+                        </form>
+                    </td>
 				</tr>
 				<tr>
 					<td>Graphics Card</td>
-					<td></td>
+					<td><% if(graphicscard){ %>
+						<img src="<%= graphicscard.smallImage %>"/> <%= graphicscard.partName %>
+						<% } %></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Graphics Card" name="search"><input type="submit" value="Select"> </form></td>
+                    <td>
+                        <form action="/buildAPooter" method="post">
+                            <input type="hidden" value="Graphics Card" name="search">
+                            <input type="submit" value="Select">
+                        </form>
+                    </td>
 				</tr>
 				<tr>
 					<td>Hard Drive</td>
-					<td></td>
+					<td><% if(harddrive){ %>
+						<img src="<%= harddrive.smallImage %>"/> <%= harddrive.partName %>
+						<% } %></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Hard Drive" name="search"><input type="submit" value="Select"> </form></td>
+                    <td>
+                        <form action="/buildAPooter" method="post">
+                            <input type="hidden" value="Hard Drive" name="search">
+                            <input type="submit" value="Select">
+                        </form>
+                    </td>
 				</tr>
 				<tr>
 					<td>Power Supply</td>
-					<td></td>
+					<td><% if(powersupply){ %>
+						<img src="<%= powersupply.smallImage %>"/> <%= powersupply.partName %>
+						<% } %></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Power Supply" name="search"><input type="submit" value="Select"> </form></td>
+                    <td>
+                        <form action="/buildAPooter" method="post">
+                            <input type="hidden" value="Power Supply" name="search">
+                            <input type="submit" value="Select">
+                        </form>
+                    </td>
 				</tr>
 				<tr>
 					<td>Disc Drive</td>
-					<td></td>
+					<td><% if(discdrive){ %>
+						<img src="<%= discdrive.smallImage %>"/> <%= discdrive.partName %>
+						<% } %></td>
 					<!--<td><button type="button">Select</button></td>-->
-                    <td><form><input type="hidden" value="Disc Drive" name="search"><input type="submit" value="Select"> </form></td>
+                    <td>
+                        <form action="/buildAPooter" method="post">
+                            <input type="hidden" value="Disc Drive" name="search">
+                            <input type="submit" value="Select">
+                        </form>
+                    </td>
 				</tr>
 			</table>
 		</div>

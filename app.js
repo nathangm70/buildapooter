@@ -15,12 +15,7 @@ var itemDisplay = require('./routes/itemDisplay');
 
 var app = express();
 //setup session information
-app.use(express);
-
 app.use(session({
-  genid: function(req){
-    return genuuid();
-  },
   secret: 'softtran',
   resave: 'false',
   saveUninitialized: 'true'
