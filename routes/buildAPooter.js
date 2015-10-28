@@ -26,6 +26,9 @@ function ItemSearchCallback(err, results){
 
         var compCase = NewCompCase();
 
+        console.log(results.ItemSearchResponse.Items[0].Item[i]);
+
+        //compCase.name = results.ItemSearchResponse.Items[0].Item[i].Name;
         compCase.image = results.ItemSearchResponse.Items[0].Item[i].MediumImage[0].URL[0];
         compCase.title = results.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0].Title[0];
         compCases.push(compCase);

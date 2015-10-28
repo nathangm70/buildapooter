@@ -11,6 +11,9 @@ router.post('/', function(req, res){
     console.log('what did we pick');
     //get the item here
     console.log(req.body.selectedPart);
+
+    //now we need to save this part in the right thing
+
 });
 
 module.exports = router;
