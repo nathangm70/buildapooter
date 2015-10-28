@@ -11,7 +11,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res){
-    console.log('i think we did it boys');
     itemSearchHelper.searchForItemNamed(req.body.search, function(err, results){
         var items = ItemSearchCallback(err, results);
         res.render('itemDisplay', {items: items});
@@ -19,6 +18,8 @@ router.post('/', function(req, res){
 });
 
 function ItemSearchCallback(err, results){
+
+    //console.log(results.ItemSearchResponse.Items[0].Item[0].ASIN); got the asin number for craig
 
     var compCases = [];
 
