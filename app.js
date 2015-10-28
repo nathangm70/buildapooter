@@ -14,7 +14,7 @@ var itemDisplay = require('./routes/itemDisplay');
 
 var app = express();
 
-var session = require('client-sessions');
+
 
 //app.local.computerParts = null;
 
