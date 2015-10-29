@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+var awsCredentials = require('../../amazonInfo.json');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('itemDisplay',
@@ -38,7 +40,8 @@ router.post('/', function(req, res){
         title: 'Build A Pooter', computercase: req.session.computercase,
         motherboard: req.session.motherboard, ram: req.session.ram,
         graphicscard: req.session.graphicscard, harddrive: req.session.harddrive,
-        powersupply: req.session.powersupply, discdrive: req.session.discdrive
+        powersupply: req.session.powersupply, discdrive: req.session.discdrive,
+        awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
     });
 });
 

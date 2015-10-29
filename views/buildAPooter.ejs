@@ -104,28 +104,39 @@
 				</tr>
 				-->
 			</table>
-            <BR>
+
             <div id="amazon">
                 <form method="GET" action="http://www.amazon.ca/gp/aws/cart/add.html">
                     <input type="image" name="add" src="http://juniortraveller.com/wp-content/uploads/CheckoutAmazon-1.png" />
                     <input type="hidden" name="AWSAccessKeyId" value=<%= awsId %> /><br/>
                     <input type="hidden" name="AssociateTag" value=<%= assocId %> /><br/>
-                    <input type="hidden" name="ASIN.1" value="B0049MPQA4"/><br/>
+                    <% if(computercase) { %>
+                    <input type="hidden" name="ASIN.1" value="<%= computercase.ASIN%>"/><br/>
+                    <% } %>
                     <input type="hidden" name="Quantity.1" value="1"/><br/>
-                    <input type="hidden" name="ASIN.2" value=""/><br/>
+                    <% if(motherboard) { %>
+                    <input type="hidden" name="ASIN.2" value="<%= motherboard.ASIN%>"/><br/>
+                    <% } %>
                     <input type="hidden" name="Quantity.2" value="1"/><br/>
-                    <input type="hidden" name="ASIN.3" value=""/><br/>
+                    <% if(ram) { %>
+                    <input type="hidden" name="ASIN.3" value="<%= ram.ASIN%>"/><br/>
+                    <% } %>
                     <input type="hidden" name="Quantity.3" value="1"/><br/>
-                    <input type="hidden" name="ASIN.4" value=""/><br/>
+                    <% if(graphicscard) { %>
+                    <input type="hidden" name="ASIN.4" value="<%= graphicscard.ASIN%>"/><br/>
+                    <% } %>
                     <input type="hidden" name="Quantity.4" value="1"/><br/>
-                    <input type="hidden" name="ASIN.5" value=""/><br/>
+                    <% if(harddrive) { %>
+                    <input type="hidden" name="ASIN.5" value="<%= harddrive.ASIN%>"/><br/>
+                    <% } %>
                     <input type="hidden" name="Quantity.5" value="1"/><br/>
-                    <input type="hidden" name="ASIN.6" value=""/><br/>
+                    <% if(powersupply) { %>
+                    <input type="hidden" name="ASIN.6" value="<%= powersupply.ASIN%>"/><br/>
+                    <% } %>
                     <input type="hidden" name="Quantity.6" value="1"/><br/>
-                    <input type="hidden" name="ASIN.7" value=""/><br/>
-                    <input type="hidden" name="Quantity.7" value="1"/><br/>
                 </form>
             </div>
+
 		</div>
         </div>
 	</div>
