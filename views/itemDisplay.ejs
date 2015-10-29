@@ -26,13 +26,21 @@
                     </form>
                 </div>
 
+
                 <% } %>
                 <% } %>
+
                 <script>
+                    $(".submit_div").click(function(){
+                        $(this).find('form').submit();
+                    });
+                    /*
                     $(".submit_div").click(function(){
                         $("form").submit();
                     });
+                    */
                 </script>
+
             </div>
         </div>
 	</body>
