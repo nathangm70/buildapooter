@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var itemSearchHelper = require('../ItemSearch/AmazonItemSearcher');
-var NewComputerPart = require('../Objects/ComputerCase');
+var NewComputerPart = require('../Objects/ComputerPart');
 
 /* GET home page. */
 var awsCredentials = require('../../amazonInfo.json');

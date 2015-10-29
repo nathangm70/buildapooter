@@ -7,10 +7,9 @@
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	</head>
 	<body>
-        <div id="wrapper">
-            <div id="navWrap">
-                <% include templates/navbar.ejs %>
-            </div>
+
+    <% include templates/navbar.ejs %>
+
             <div id="container">
                 <% if(items) { %>
 
@@ -18,8 +17,7 @@
                 <div style="border: solid thick black" class="submit_div">
                     <form method="post" action="itemDisplay">
                         <p><%= items[i].title %></p>
-                        <img src="<%= items[i].mediumImage %>" />
-                        <p><%= items[i].price %></p>
+                        <p id="price"><img src="<%= items[i].mediumImage %>"/><BR><%= items[i].price %></p>
                         <input type="hidden" value="<%= JSON.stringify(items[i]) %> " name="selectedPart">
                         <input type="hidden" value="<%= part %>" name="parttype">
 
@@ -42,7 +40,7 @@
                 </script>
 
             </div>
-        </div>
+
 	</body>
 </html>
 
