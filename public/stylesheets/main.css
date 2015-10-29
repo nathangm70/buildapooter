@@ -28,6 +28,13 @@ p{text-align:center;}
 button{width:200px;}
 #amazon{float:right; margin:0 auto; width:250px; padding-right: 215px}
 .submit_div{cursor:pointer}
+#logo
+{
+    width: 180px;
+    height: 90px;
+    padding-top: 10px;
+
+}
 
 @media only screen and (max-width: 400px){
     #wrapper{padding:5px;margin:0 auto;width:350px;background-color:#666666;box-shadow:12px 12px black;border-radius:35px;min-height:800px;}
