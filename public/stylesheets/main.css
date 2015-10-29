@@ -1,6 +1,6 @@
 body{background-image:url("../images/background2.jpg");font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;}
 #homeTable{border-spacing:40px;}
-#homeTable td{margin-top:20px;width:400px;border:2px solid black;text-align:center; height:250px;max-height:250px;}
+#homeTable td{margin-top:20px;width:400px;border:2px solid black;text-align:center; height:200px;max-height:250px;}
 #homeTable tr:first-child td:first-child{background-image:url("../images/components.jpg")}
 #homeTable tr:first-child td:nth-child(2){background-image:url("../images/builds.jpg")}
 #homeTable tr:nth-child(2) td:first-child{background-image:url("../images/signup.jpg")}
