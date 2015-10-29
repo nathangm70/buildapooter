@@ -8,15 +8,38 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res){
-    console.log('what did we pick');
-    //get the item here
-    console.log(req.body.selectedPart);
 
-    //save the part we selected here :D
+    //now we need to save this part in the right thing
+    switch(req.body.parttype){
+        case 'Computer Case':
+            req.session.computercase = JSON.parse(req.body.selectedPart);
+            break;
+        case 'Mother Board':
+            req.session.motherboard = JSON.parse(req.body.selectedPart);
+            break;
+        case 'Ram':
+            req.session.ram = JSON.parse(req.body.selectedPart);
+            break;
+        case 'Graphics Card':
+            req.session.graphicscard = JSON.parse(req.body.selectedPart);
+            break;
+        case 'Hard Drive':
+            req.session.harddrive = JSON.parse(req.body.selectedPart);
+            break;
+        case 'Power Supply':
+            req.session.powersupply = JSON.parse(req.body.selectedPart);
+            break;
+        case 'Disc Drive':
+            req.session.discdrive = JSON.parse(req.body.selectedPart);
+            break;
+    }
 
-
-    res.render('buildAPooter',
-        {title: 'Build A Pooter'});
+    res.render('buildAPooter', {
+        title: 'Build A Pooter', computercase: req.session.computercase,
+        motherboard: req.session.motherboard, ram: req.session.ram,
+        graphicscard: req.session.graphicscard, harddrive: req.session.harddrive,
+        powersupply: req.session.powersupply, discdrive: req.session.discdrive
+    });
 });
 
 module.exports = router;
