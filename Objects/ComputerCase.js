@@ -6,6 +6,8 @@ module.exports = function() {
     return{
         //create our object here
         title:"",
-        image:""
+        image:"",
+        name:"",
+        ASIN:""
     }
 };
