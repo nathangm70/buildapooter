@@ -9,10 +9,11 @@ body{background-image:url("../images/background2.jpg");font-family: "Palatino Li
 #homeTable a:hover{opacity:1;visibility: visible}
 #homeTable a:hover p{visibility: visible}
 .desc{font-size:20px; text-shadow:0px 0px; visibility: hidden}
-#navWrap{margin-top:-10px;margin-bottom:10px;width:100%;height:100px;display:block;background-color:lightblue;}
-#header{color:white;height:100px;float:left;letter-spacing:10px;margin-top:-45px;text-align:center;padding-left:75px;font-size:33px;text-shadow:4px 4px #333333}
+#navWrap{margin-top:-8px;margin-bottom:10px;width:100%;height:100px;display:block;background-color:lightblue;}
+#header{float:left;display:inline;color:white;height:100px;letter-spacing:10px;margin-top:-45px;font-size:33px;text-shadow:4px 4px #333333;width:75%}
+#header img{float:left;margin-top:45px;width:100px;height:100px}
 #header a{color:white;text-decoration: none;}
-#navMenu{float:right;width:300px;padding-top:2px;padding-bottom:2px;color:white;min-height:100px;}
+#navMenu{float:right;padding-top:2px;padding-bottom:2px;color:white;min-height:100px;}
 #navMenu li{box-shadow:7px 7px black;background-color:#444444;padding-top:15px;text-align:center;border:4px solid black;border-radius:5px;font-size:18px;width:175px;height:50px;display:block;}
 #navMenu ul ul{display:none;}
 #navMenu ul li:hover > ul{margin-left:-35px;position:absolute;display:block}
@@ -21,7 +22,7 @@ body{background-image:url("../images/background2.jpg");font-family: "Palatino Li
 #container{width:90%;border-radius:20px;min-height:800px;margin:0 auto;font-size:20px;}
 p{text-align:center;}
 #form{padding-top:20px;min-height:650px;margin:0 auto;text-align:center;width:825px;}
-#navMenu a{text-decoration:none;color:white;}
+#navMenu a{width:100%;height:100%;text-decoration:none;color:white;}
 #parts{padding-top:20px}
 #parts td{text-align:center;margin:0 auto;width:250px;border:4px solid black;}
 #builds{padding-top:20px}
