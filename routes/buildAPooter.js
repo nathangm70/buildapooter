@@ -26,27 +26,31 @@ router.post('/', function(req, res){
 function ItemSearchCallback(err, results){
 
     var parts = [];
-    //console.log(results.ItemSearchResponse.Items[0].Item[0].ItemAttributes[0]);
-    for (var i = 0 ; i < results.ItemSearchResponse.Items[0].Item.length; i++){
+
+    for (var i = 0; i < results.ItemSearchResponse.Items[0].Item.length; i++) {
 
         var part = NewComputerPart();
 
-
         //grab the name and the title of the item
         //compCase.name = results.ItemSearchResponse.Items[0].Item[i].Name;
-        console.log('title ' + results.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0].Title[0]);
         part.title = results.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0].Title[0];
-        //console.log('part name ' + results.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0].Label[0]);
-        //part.partName = results.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0].Label[0];
+
+        part.partName = results.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0].Label[0];
+
         //grab the price
-        console.log('price ' + results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestNewPrice[0].FormattedPrice[0]);
-        part.price = results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
+        //check that there is a price here
+        if(results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestNewPrice)
+            part.price = results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
+        else if(results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestUsedPrice)
+            part.price = results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestUsedPrice[0].FormattedPrice[0];
+        else{
+            //something really bad happened and we need to find a way to deal with this later
+            part.price = 'Not Avaliable';
+        }
+
         //finaly grab all 3 images
-        console.log('small image ' + results.ItemSearchResponse.Items[0].Item[i].SmallImage[0].URL[0]);
         part.smallImage = results.ItemSearchResponse.Items[0].Item[i].SmallImage[0].URL[0];
-        console.log('meduim image ' + results.ItemSearchResponse.Items[0].Item[i].MediumImage[0].URL[0]);
         part.mediumImage = results.ItemSearchResponse.Items[0].Item[i].MediumImage[0].URL[0];
-        console.log('large image ' + results.ItemSearchResponse.Items[0].Item[i].LargeImage[0].URL[0]);
         part.largeImage = results.ItemSearchResponse.Items[0].Item[i].LargeImage[0].URL[0];
 
         //once we have everything push this item into the array
@@ -54,6 +58,7 @@ function ItemSearchCallback(err, results){
     }
     //now that we have our parts array populated lets return this
     return parts;
+
 }
 
 module.exports = router;

@@ -27,7 +27,7 @@ router.post('/', function(req, res){
             req.session.harddrive = JSON.parse(req.body.selectedPart);
             break;
         case 'Power Supply':
-            req.session.powersupply = JSON.parse(req.body.powersupply);
+            req.session.powersupply = JSON.parse(req.body.selectedPart);
             break;
         case 'Disc Drive':
             req.session.discdrive = JSON.parse(req.body.selectedPart);
