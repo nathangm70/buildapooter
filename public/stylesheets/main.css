@@ -26,6 +26,7 @@ p{text-align:center;}
 #builds td{display:block;text-align:center;margin:0 auto;width:400px;border:4px solid black;}
 .sub{text-align:center;}
 button{width:200px;}
+#amazon{float:right; margin:0 auto; width:250px; padding-right: 215px}
 .submit_div{cursor:pointer}
 
 @media only screen and (max-width: 400px){

@@ -7,25 +7,37 @@
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	</head>
 	<body>
-		<% if(items) { %>
+        <div id="wrapper">
+            <div id="navWrap">
+                <div id="header">
+                    <h1>Build-A-Pooter</h1>
+                </div>
+                <% include templates/navbar.ejs %>
+            </div>
+            <div id="container">
+                <% if(items) { %>
 
-				<% for(var i = 0; i < items.length; i++) { %>
-					<div style="border: solid thick black" class="submit_div">
-						<form method="post" action="itemDisplay">
-							<p><%= items[i].title %></p>
-							<img src="<%= items[i].image %>" />
-							<input type="hidden" value="<%= JSON.stringify(items[i]) %> " name="selectedPart">
-							<input type="hidden" value="<%= part %>" name="parttype">
-							<input type="submit" value="Select">
-						</form>
-					</div>
+                <% for(var i = 0; i < items.length; i++) { %>
+                <div style="border: solid thick black" class="submit_div">
+                    <form method="post" action="itemDisplay">
+                        <p><%= items[i].title %></p>
+                        <img src="<%= items[i].mediumImage %>" />
+                        <p><%= items[i].price %></p>
+                        <input type="hidden" value="<%= JSON.stringify(items[i]) %> " name="selectedPart">
+                        <input type="hidden" value="<%= part %>" name="parttype">
 
-				<% } %>
-		<% } %>
-		<script>
-			$(".submit_div").click(function(){
-				$("form").submit();
-			});
-		</script>
+                    </form>
+                </div>
+
+                <% } %>
+                <% } %>
+                <script>
+                    $(".submit_div").click(function(){
+                        $("form").submit();
+                    });
+                </script>
+            </div>
+        </div>
 	</body>
 </html>
+
