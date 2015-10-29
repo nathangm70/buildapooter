@@ -17,8 +17,7 @@
                 <div style="border: solid thick black" class="submit_div">
                     <form method="post" action="itemDisplay">
                         <p><%= items[i].title %></p>
-                        <img src="<%= items[i].mediumImage %>" />
-                        <p id="price"><%= items[i].price %></p>
+                        <p id="price"><img src="<%= items[i].mediumImage %>"/><BR><%= items[i].price %></p>
                         <input type="hidden" value="<%= JSON.stringify(items[i]) %> " name="selectedPart">
                         <input type="hidden" value="<%= part %>" name="parttype">
 

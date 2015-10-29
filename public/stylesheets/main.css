@@ -31,6 +31,7 @@ p{text-align:center;}
 button{width:200px;}
 #amazon{float:right; margin:0 auto; width:250px; padding-right: 215px}
 .submit_div{cursor:pointer}
+#price{font-size: 40px; font-weight: bold;}
 
 
 @media only screen and (max-width: 400px){
