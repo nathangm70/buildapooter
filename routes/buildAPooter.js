@@ -5,13 +5,14 @@ var itemSearchHelper = require('../ItemSearch/AmazonItemSearcher');
 var NewComputerPart = require('../Objects/ComputerCase');
 
 /* GET home page. */
+var awsCredentials = require('../../amazonInfo.json');
 router.get('/', function(req, res, next) {
-    console.log('we should display: ' + req.session.computercase);
     res.render('buildAPooter', {
         title: 'Build A Pooter', computercase: req.session.computercase,
         motherboard: req.session.motherboard, ram: req.session.ram,
         graphicscard: req.session.graphicscard, harddrive: req.session.harddrive,
-        powersupply: req.session.powersupply, discdrive: req.session.discdrive
+        powersupply: req.session.powersupply, discdrive: req.session.discdrive,
+        awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId
     });
 });
 
