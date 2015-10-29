@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
         title: 'Build A Pooter', computercase: req.session.computercase,
         motherboard: req.session.motherboard, ram: req.session.ram,
         graphicscard: req.session.graphicscard, harddrive: req.session.harddrive,
-        powersupply: req.session.powersupply, discdrive: req.session.discdrive,
+        powersupply: req.session.powersupply, discdrive: req.session.discdrive, processor: req.session.processor,
         awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
     });
 });

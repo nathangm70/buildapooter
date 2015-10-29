@@ -89,6 +89,18 @@
                         </form>
                     </td>
 				</tr>
+                <tr>
+                    <td>Processor</td>
+                    <td><% if(processor){ %>
+                        <img src="<%= processor.smallImage %>"/> <%= processor.partName %>
+                        <% } %></td>
+                    <td>
+                        <form action="/buildAPooter" method="post">
+                            <input type="hidden" value="Processor" name="search">
+                            <input type="submit" value="Select">
+                        </form>
+                    </td>
+                </tr>
 				<!--
 				<tr>
 					<td>Disc Drive</td>
@@ -134,6 +146,10 @@
                     <input type="hidden" name="ASIN.6" value="<%= powersupply.ASIN%>"/><br/>
                     <% } %>
                     <input type="hidden" name="Quantity.6" value="1"/><br/>
+                    <% if(processor) { %>
+                    <input type="hidden" name="ASIN.7" value="<%= processor.ASIN%>"/><br/>
+                    <% } %>
+                    <input type="hidden" name="Quantity.7" value="1"/><br/>
                 </form>
             </div>
 

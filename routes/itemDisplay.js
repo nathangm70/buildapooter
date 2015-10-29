@@ -34,13 +34,16 @@ router.post('/', function(req, res){
         case 'Disc Drive':
             req.session.discdrive = JSON.parse(req.body.selectedPart);
             break;
+        case 'Processor':
+            req.session.processor = JSON.parse(req.body.selectedPart);
+            break;
     }
 
     res.render('buildAPooter', {
         title: 'Build A Pooter', computercase: req.session.computercase,
         motherboard: req.session.motherboard, ram: req.session.ram,
         graphicscard: req.session.graphicscard, harddrive: req.session.harddrive,
-        powersupply: req.session.powersupply, discdrive: req.session.discdrive,
+        powersupply: req.session.powersupply, discdrive: req.session.discdrive, processor: req.session.processor,
         awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
     });
 });
