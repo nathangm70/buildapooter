@@ -14,7 +14,7 @@
 				<tr>
 					<td>Computer Case</td>
 					<td><% if(computercase){ %>
-						<img src="<%= computercase.smallImage %>"/> <%= computercase.partName %>
+						<img src="<%= computercase.smallImage %>" style="float: left"/> <%= computercase.partName %><br><%= computercase.price %>
 						<% } %></td>
                     <td>
                         <form action="/buildAPooter" method="post">
@@ -27,7 +27,7 @@
 				<tr>
 					<td>Mother Board</td>
 					<td><% if(motherboard){ %>
-						<img src="<%= motherboard.smallImage %>"/> <%= motherboard.partName %>
+						<img src="<%= motherboard.smallImage %>" style="float: left"/> <%= motherboard.partName %><br><%= motherboard.price %>
 						<% } %></td>
                     <td>
                         <form action="/buildAPooter" method="post">
@@ -39,7 +39,7 @@
 				<tr>
 					<td>Ram</td>
 					<td><% if(ram){ %>
-						<img src="<%= ram.smallImage %>"/> <%= ram.partName %>
+						<img src="<%= ram.smallImage %>" style="float: left"/> <%= ram.partName %><br><%= ram.price %>
 						<% } %></td>
                     <td>
                         <form action="/buildAPooter" method="post"
@@ -51,7 +51,7 @@
 				<tr>
 					<td>Graphics Card</td>
 					<td><% if(graphicscard){ %>
-						<img src="<%= graphicscard.smallImage %>"/> <%= graphicscard.partName %>
+						<img src="<%= graphicscard.smallImage %>" style="float: left"/> <%= graphicscard.partName %><br><%= graphicscard.price %>
 						<% } %></td>
                     <td>
                         <form action="/buildAPooter" method="post">
@@ -63,7 +63,7 @@
 				<tr>
 					<td>Hard Drive</td>
 					<td><% if(harddrive){ %>
-						<img src="<%= harddrive.smallImage %>"/> <%= harddrive.partName %>
+						<img src="<%= harddrive.smallImage %>" style="float: left"/> <%= harddrive.partName %><br><%= harddrive.price %>
 						<% } %></td>
                     <td>
                         <form action="/buildAPooter" method="post">
@@ -75,7 +75,7 @@
 				<tr>
 					<td>Power Supply</td>
 					<td><% if(powersupply){ %>
-						<img src="<%= powersupply.smallImage %>"/> <%= powersupply.partName %>
+						<img src="<%= powersupply.smallImage %>" style="float: left"/> <%= powersupply.partName %><br><%= powersupply.price %>
 						<% } %></td>
                     <td>
                         <form action="/buildAPooter" method="post">
@@ -87,7 +87,7 @@
                 <tr>
                     <td>Processor</td>
                     <td><% if(processor){ %>
-                        <img src="<%= processor.smallImage %>"/> <%= processor.partName %>
+                        <img src="<%= processor.smallImage %>" style="float: left"/> <%= processor.partName %><br><%= processor.price %>
                         <% } %></td>
                     <td>
                         <form action="/buildAPooter" method="post">
@@ -98,38 +98,41 @@
                 </tr>
 			</table>
 
-            <div id="amazon">
-                <form method="GET" action="http://www.amazon.ca/gp/aws/cart/add.html">
-                    <input type="image" name="add" src="http://juniortraveller.com/wp-content/uploads/CheckoutAmazon-1.png" />
-                    <input type="hidden" name="AWSAccessKeyId" value=<%= awsId %> /><br/>
-                    <input type="hidden" name="AssociateTag" value=<%= assocId %> /><br/>
-                    <% if(computercase) {%>
-                    <input type="hidden" name="ASIN.1" value=<%= computercase.ASIN%>/><br>
-                    <input type="hidden" name="Quantity.1" value="1"/><br>
-                    <% } %>
-                    <% if(motherboard) { %>
-                    <input type="hidden" name="ASIN.2" value="<%= motherboard.ASIN%>"/><br/>
-                    <input type="hidden" name="Quantity.2" value="1"/><br/>
-                    <% } %>
-                    <% if(ram) { %>
-                    <input type="hidden" name="ASIN.3" value="<%= ram.ASIN%>"/><br/>
-                    <input type="hidden" name="Quantity.3" value="1"/><br/>
-                    <% } %>
-                    <% if(graphicscard) { %>
-                    <input type="hidden" name="ASIN.4" value="<%= graphicscard.ASIN%>"/><br/>
-                    <input type="hidden" name="Quantity.4" value="1"/><br/>
-                    <% } %>
-                    <% if(harddrive) { %>
-                    <input type="hidden" name="ASIN.5" value="<%= harddrive.ASIN%>"/><br/>
-                    <input type="hidden" name="Quantity.5" value="1"/><br/>
-                    <% } %>
-                    <% if(powersupply) { %>
-                    <input type="hidden" name="ASIN.6" value="<%= powersupply.ASIN%>"/><br/>
-                    <input type="hidden" name="Quantity.6" value="1"/><br/>
-                    <% } %>
-                    <% if(processor) { %>
-                    <input type="hidden" name="ASIN.7" value="<%= processor.ASIN%>"/><br/>
-                    <input type="hidden" name="Quantity.7" value="1"/><br/>
+            <br/>
+            <% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive ){ %>
+                <div id="amazon">
+                    <form method="GET" action="http://www.amazon.ca/gp/aws/cart/add.html">
+                        <input type="image" name="add" src="http://juniortraveller.com/wp-content/uploads/CheckoutAmazon-1.png" />
+                        <input type="hidden" name="AWSAccessKeyId" value=<%= awsId %> /><br/>
+                        <input type="hidden" name="AssociateTag" value=<%= assocId %> /><br/>
+                        <% if(computercase) {%>
+                        <input type="hidden" name="ASIN.1" value=<%= computercase.ASIN%>/><br>
+                        <input type="hidden" name="Quantity.1" value="1"/><br>
+                        <% } %>
+                        <% if(motherboard) { %>
+                        <input type="hidden" name="ASIN.2" value="<%= motherboard.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.2" value="1"/><br/>
+                        <% } %>
+                        <% if(ram) { %>
+                        <input type="hidden" name="ASIN.3" value="<%= ram.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.3" value="1"/><br/>
+                        <% } %>
+                        <% if(graphicscard) { %>
+                        <input type="hidden" name="ASIN.4" value="<%= graphicscard.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.4" value="1"/><br/>
+                        <% } %>
+                        <% if(harddrive) { %>
+                        <input type="hidden" name="ASIN.5" value="<%= harddrive.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.5" value="1"/><br/>
+                        <% } %>
+                        <% if(powersupply) { %>
+                        <input type="hidden" name="ASIN.6" value="<%= powersupply.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.6" value="1"/><br/>
+                        <% } %>
+                        <% if(processor) { %>
+                        <input type="hidden" name="ASIN.7" value="<%= processor.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.7" value="1"/><br/>
+                        <% } %>
                     <% } %>
                 </form>
             </div>
