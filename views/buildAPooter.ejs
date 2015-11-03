@@ -101,13 +101,13 @@
             <br/>
             <% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive ){ %>
                 <div id="amazon">
-                    <form method="GET" action="http://www.amazon.ca/gp/aws/cart/add.html">
+                    <form method="GET" action="http://www.amazon.com/gp/aws/cart/add.html">
                         <input type="image" name="add" src="http://juniortraveller.com/wp-content/uploads/CheckoutAmazon-1.png" />
                         <input type="hidden" name="AWSAccessKeyId" value=<%= awsId %> /><br/>
                         <input type="hidden" name="AssociateTag" value=<%= assocId %> /><br/>
-                        <% if(computercase) {%>
-                        <input type="hidden" name="ASIN.1" value=<%= computercase.ASIN%>/><br>
-                        <input type="hidden" name="Quantity.1" value="1"/><br>
+                        <% if(computercase) { %>
+                        <input type="hidden" name="ASIN.1" value="<%= computercase.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.1" value="1"/><br/>
                         <% } %>
                         <% if(motherboard) { %>
                         <input type="hidden" name="ASIN.2" value="<%= motherboard.ASIN%>"/><br/>
