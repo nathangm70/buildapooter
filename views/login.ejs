@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Build-A-Pooter</title>
 	<link rel="stylesheet" href="../stylesheets/main.css">
 </head>
 <body>
-<div id="wrapper">
-	<div id="navWrap">
-		<div id="header">
-			<h1>Build-A-Pooter</h1>
-		</div>
-		<% include templates/navbar.ejs %>
+<% include templates/navbar.ejs %>
 	<div id="container">
 		<h1 class="sub">Login</h1>
 		<form>
-			<table>
+			<table align="center">
 				<tr><td>UserName:</td><td><input type="text"/></td></tr><br>
 				<tr><td>Password:</td><td><input type="password" /></td></tr>
 				<tr><td colspan="2"><input type="submit" value="Login!"/></td></tr>
+				<tr><td colspan="2"><a href="/createAccount">Click here to create a new account:</a></td></tr>
 			</table>
 		</form><br>
-		<a href="createAccount.html">Click here to create a new account:</a>
+
+
 	</div>
-</div>
+
 </body>
 </html>
