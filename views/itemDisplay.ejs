@@ -4,21 +4,43 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Build-A-Pooter</title>
 		<link rel="stylesheet" href="../stylesheets/main.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	</head>
 	<body>
-		<% if(items) { %>
 
-				<% for(var i = 0; i < items.length; i++) { %>
-					<div style="border: solid thick black">
-						<form method="post" action="itemDisplay">
-							<p><%= items[i].title %></p>
-							<img src="<%= items[i].image %>" />
-							<input type="hidden" value="<%= items[i].title %> " name="selectedPart">
-							<input type="submit" value="Select">
-						</form>
-					</div>
+    <% include templates/navbar.ejs %>
 
-				<% } %>
-		<% } %>
+            <div id="container">
+                <% if(items) { %>
+
+                <% for(var i = 0; i < items.length; i++) { %>
+                <div style="border: solid thick black" class="submit_div">
+                    <form method="post" action="itemDisplay">
+                        <p><%= items[i].title %></p>
+                        <p id="price"><img src="<%= items[i].mediumImage %>" style="border: black solid thin;"/><BR><%= items[i].price %></p>
+                        <input type="hidden" value="<%= JSON.stringify(items[i]) %> " name="selectedPart">
+                        <input type="hidden" value="<%= part %>" name="parttype">
+
+                    </form>
+                </div>
+
+
+                <% } %>
+                <% } %>
+
+                <script>
+                    $(".submit_div").click(function(){
+                        $(this).find('form').submit();
+                    });
+                    /*
+                    $(".submit_div").click(function(){
+                        $("form").submit();
+                    });
+                    */
+                </script>
+
+            </div>
+
 	</body>
 </html>
+
