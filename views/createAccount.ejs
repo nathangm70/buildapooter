@@ -11,36 +11,38 @@
 
 
 	<div id="container">
-		<h1 class="sub">Create an Account:</h1>
-		<table align="center">
-			<tr>
-				<td>First Name:</td>
-				<td><input type="text" /></td>
-			</tr>
-			<tr>
-				<td>Last Name:</td>
-				<td><input type="text" /></td>
-			</tr>
-			<tr>
-				<td>Username:</td>
-				<td><input type="text" /></td>
-			</tr>
-			<tr>
-				<td>Email:</td>
-				<td><input type="text" /></td>
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type="password" /></td>
-			</tr>
-			<tr>
-				<td>Confirm Password:</td>
-				<td><input type="password" /></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="Create Account"/></td>
-			</tr>
-			</table>
+		<form action="/createAccount" method="post" >
+			<h1 class="sub">Create an Account:</h1>
+			<table align="center">
+				<tr>
+					<td>First Name:</td>
+					<td><input type="text" /></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input type="text" /></td>
+				</tr>
+				<tr>
+					<td>Username:</td>
+					<td><input type="text" /></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" /></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" /></td>
+				</tr>
+				<tr>
+					<td>Confirm Password:</td>
+					<td><input type="password" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Create Account"/></td>
+				</tr>
+				</table>
+		</form>
 	</div>
 
 </body>
