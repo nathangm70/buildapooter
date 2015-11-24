@@ -12,6 +12,8 @@ router.get('/', function(req, res, next) {
         motherboard: req.session.motherboard, ram: req.session.ram,
         graphicscard: req.session.graphicscard, harddrive: req.session.harddrive,
         powersupply: req.session.powersupply, discdrive: req.session.discdrive, processor: req.session.processor,
+        monitor: req.session.monitor, keyboard: req.session.keyboard, webcam: req.session.webcam,
+        headset: req.session.headset, computermouse: req.session.computermouse,
         awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
     });
 });

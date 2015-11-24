@@ -37,6 +37,21 @@ router.post('/', function(req, res){
         case 'Processor':
             req.session.processor = JSON.parse(req.body.selectedPart);
             break;
+        case 'Monitor':
+            req.session.monitor = JSON.parse(req.body.selectedPart);
+            break;
+        case 'Keyboard':
+            req.session.keyboard = JSON.parse(req.body.selectedPart);
+            break;
+        case 'Webcam':
+            req.session.webcam = JSON.parse(req.body.selectedPart);
+            break;
+        case 'Headset':
+            req.session.headset = JSON.parse(req.body.selectedPart);
+            break;
+        case 'Computermouse':
+            req.session.computermouse = JSON.parse(req.body.selectedPart);
+            break;
     }
 
     res.render('buildAPooter', {
@@ -44,6 +59,8 @@ router.post('/', function(req, res){
         motherboard: req.session.motherboard, ram: req.session.ram,
         graphicscard: req.session.graphicscard, harddrive: req.session.harddrive,
         powersupply: req.session.powersupply, discdrive: req.session.discdrive, processor: req.session.processor,
+        monitor: req.session.monitor, keyboard: req.session.keyboard, webcam: req.session.webcam,
+        headset: req.session.headset, computermouse: req.session.computermouse,
         awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
     });
 });
