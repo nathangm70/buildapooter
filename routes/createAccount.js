@@ -34,15 +34,13 @@ router.post('/', function(req, res)
             console.log('we got data lets checkit');
             console.log('Data: ' + data);
 
-            switch (data) {
-                case -1:
-                    //email / username already in use
-
-                    break;
-                case 1:
-                    //account created successfully
-                    res.render('index', { title: 'Build A Pooter'});
-                    break;
+            if(data.toString() == '1'){
+                //account created successfully
+                console.log('we made it baby');
+                res.render('index', { title: 'Build A Pooter'});
+            } else if(data.toString() == '-1'){
+                //email / username already in use
+                console.log('we failed baby');
             }
         });
 
