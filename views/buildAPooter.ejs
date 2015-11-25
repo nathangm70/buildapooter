@@ -7,6 +7,7 @@
 </head>
 <body>
 <% include templates/navbar.ejs %>
+<% var total = 0; %>
 	<div id="container">
 		<h1 class="sub">Select your parts:</h1>
 		<div id="parts">
@@ -164,9 +165,69 @@
                 </table>
 
             <br/>
-            <% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive || monitor || keyboard || webcam || headset || computermouse){ %>
+            <% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive || monitor || keyboard || webcam || headset || computermouse ){ %>
                 <div id="amazon">
-                    <h1>Total Price: </h1>
+
+                    <%  if( computercase )
+                        {
+                        total = (computercase.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if( processor )
+                        {
+                            total = (processor.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( motherboard ) {
+                            total = (motherboard.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( ram )
+                        {
+                            total = (ram.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( powersupply )
+                        {
+                            total = (powersupply.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( graphicscard )
+                        {
+                            total = (graphicscard.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( harddrive )
+                        {
+                            total = (harddrive.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( monitor )
+                        {
+                            total = (monitor.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( keyboard )
+                        {
+                            total = (keyboard.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( webcam )
+                        {
+                            total = (webcam.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( headset )
+                        {
+                            total = (headset.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( computermouse )
+                        {
+                            total = (computermouse.numPrice / 100) + total;
+                        } %>
+
+                    <h1>Total Price: $<%= total.toFixed(2) %></h1>
                     <form method="GET" action="http://www.amazon.com/gp/aws/cart/add.html">
                         <input type="image" name="add" src="http://juniortraveller.com/wp-content/uploads/CheckoutAmazon-1.png" />
                         <input type="hidden" name="AWSAccessKeyId" value=<%= awsId %> /><br/>

@@ -41,13 +41,33 @@ function ItemSearchCallback(err, results){
 
         //grab the price
         //check that there is a price here
-        if(results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestNewPrice)
+        if (results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestNewPrice) {
             part.price = results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
-        else if(results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestUsedPrice)
+            if (part.numPrice = results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestNewPrice[0].Amount)
+            {
+                part.numPrice = results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestNewPrice[0].Amount[0];
+            }
+            else
+            {
+                console.log("FUCK");
+            }
+        }
+        else if (results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestUsedPrice) {
             part.price = results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestUsedPrice[0].FormattedPrice[0];
+
+            if (part.numPrice = results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestUsedPrice[0].Amount)
+            {
+                part.numPrice = results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestUsedPrice[0].Amount[0];
+            }
+            else
+            {
+                console.log("FUCK");
+            }
+        }
         else{
             //something really bad happened and we need to find a way to deal with this later
             part.price = 'Not Avaliable';
+            part.numPrice = 'Not Available';
         }
 
         //finaly grab all 3 images
