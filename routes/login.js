@@ -20,9 +20,10 @@ router.post('/', function(req, res){
     socket.on('data', function(data){
         console.log('Data: ' + data);
 
-        switch( data ) {
-            case "-1":
-
+        switch( data.toString() ) {
+            case '-1':
+                //login failed
+                res.render('login', {title: 'Build A Pooter'});
                 break;
             default :
                 req.session.user = JSON.parse(data);

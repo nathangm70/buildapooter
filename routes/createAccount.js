@@ -32,7 +32,8 @@ router.post('/', function(req, res)
             //read some data and then destroy our socket or something like that
             //the data
             console.log('we got data lets checkit');
-            console.log('Data: ' + data);
+            console.log('Data: ' + data.toString());
+
 
             if(data.toString() == '1'){
                 //account created successfully
