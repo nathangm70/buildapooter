@@ -22,27 +22,31 @@ router.post('/', function(req, res)
         user.firstName = req.body.firstName;
         user.lastName = req.body.lastName;
         user.email = req.body.email;
-        user.password = req.body.passWord;
+        user.password = req.body.password;
 
         var socket = socketConnector.getSocket();
         socket.write('1\n');
         socket.write(JSON.stringify(user) + '\n');
+        var response = null;
         socket.on('data', function(data){
             //read some data and then destroy our socket or something like that
             //the data
             console.log('we got data lets checkit');
             console.log('Data: ' + data);
 
-            //do a thing where we check if it was added or not then we destroy it and return that
-            if(data == 'success'){
-                //we made an account
-            } else {
-                //we didn't make an account do some other stuff here
-                //have dang send back an account creation failure
-            }
+            switch (data) {
+                case -1:
+                    //email / username already in use
 
-            socket.destroy();
+                    break;
+                case 1:
+                    //account created successfully
+                    res.render('index', { title: 'Build A Pooter'});
+                    break;
+            }
         });
+
+
     } else {
         //they goofed up the password post it back
         //display a passwords dont match message
