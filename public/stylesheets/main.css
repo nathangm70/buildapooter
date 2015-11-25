@@ -1,5 +1,5 @@
 body{background-image:url("../images/background2.jpg");font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;}
-#homeTable{border-spacing:40px;}
+#homeTable{margin-top:40px;border-spacing:40px;}
 #homeTable td{margin-top:20px;width:400px;border:2px solid black;text-align:center; height:200px;max-height:250px;}
 #homeTable tr:first-child td:first-child{background-image:url("../images/components.jpg")}
 #homeTable tr:first-child td:nth-child(2){background-image:url("../images/builds.jpg")}
@@ -25,14 +25,21 @@ p{text-align:center;}
 #form{padding-top:20px;min-height:650px;margin:0 auto;text-align:center;width:825px;}
 #navMenu a{width:100%;height:100%;text-decoration:none;color:white;}
 #parts{padding-top:20px}
-#parts td{text-align:center;margin:0 auto;width:250px;border:4px solid black;}
 #builds{padding-top:20px}
 #builds td{display:block;text-align:center;margin:0 auto;width:250px;border:4px solid black;}
 .sub{text-align:center;}
-button{width:200px;}
 #amazon{float:right; margin:0 auto; width:250px; padding-right: 215px}
 .submit_div{cursor:pointer}
 #price{font-size: 40px; font-weight: bold;}
+.table tr{background-color: lightskyblue;}
+.table td{max-width:400px;min-width:100px;}
+.table td:nth-child(2){z-index:100;}
+.table td:nth-child(3){text-align:right;width:200px;max-width:150px;}
+.page-header h1{text-align:center;font-size:50px;color:white;font-weight:bold;letter-spacing:10px;font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+                text-shadow:5px 5px #333333;}
+.page-header h1:hover{text-shadow:3px 3px #333333;}
+.page-header a{color:white;text-decoration: none;}
+.navbar-default { background-color: lightskyblue;  border-color: #030033;  }
 
 
 
@@ -62,15 +69,16 @@ button{width:200px;}
     p{text-align:center;}
     #form{padding-top:20px;min-height:650px;margin:0 auto;text-align:center;width:825px;}
     #navMenu a{width:100%;height:100%;text-decoration:none;color:white;}
-    #parts{padding-top:20px}
-    #parts td{text-align:center;margin:0 auto;width:250px;border:4px solid black;}
     #builds{padding-top:20px}
     #builds td{display:block;text-align:center;margin:0 auto;width:250px;border:4px solid black;}
     .sub{text-align:center;}
-    button{width:200px;}
     #amazon{float:right; margin:0 auto; width:150px; padding-right: 215px}
     .submit_div{cursor:pointer}
-    #price{font-size: 40px; font-weight: bold;}
+    #price{font-size: 25px; font-weight: bold;text-align: left}
+    .table td{display:block;}
+
+    .page-header{font-size:30px;letter-spacing:0px;margin-top:-100px;}
+    .table tr{margin-top:10px;}
 }
 
 @media (min-width:450px) and (max-width:970px){
@@ -81,5 +89,5 @@ button{width:200px;}
     #navWrap{position: relative}
     #navMenu{margin-top:-15px;}
     #navMenu li{height:25px;width:125px;}
-    #container{padding-top:0px;}
 }
+
