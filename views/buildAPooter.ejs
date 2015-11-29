@@ -7,6 +7,7 @@
 </head>
 <body>
 <% include templates/navbar.ejs %>
+<% var total = 0; %>
 	<div id="container">
 		<h1 class="sub">Select your parts:</h1>
 		<div id="parts">
@@ -96,11 +97,137 @@
                         </form>
                     </td>
                 </tr>
+
 			</table>
+            <h1 class="sub">Select your peripherals:</h1>
+            <div id="parts">
+                <table align="center">
+                    <tr>
+                        <td>Monitor</td>
+                        <td><% if(monitor){ %>
+                            <img src="<%= monitor.smallImage %>" style="float: left"/> <%= monitor.partName %><br><%= monitor.price %>
+                            <% } %></td>
+                        <td>
+                            <form action="/buildAPooter" method="post">
+                                <input type="hidden" value="Monitor" name="search">
+                                <input type="submit" value="Select">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Keyboard</td>
+                        <td><% if(keyboard){ %>
+                            <img src="<%= keyboard.smallImage %>" style="float: left"/> <%= keyboard.partName %><br><%= keyboard.price %>
+                            <% } %></td>
+                        <td>
+                            <form action="/buildAPooter" method="post">
+                                <input type="hidden" value="Keyboard" name="search">
+                                <input type="submit" value="Select">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Webcam</td>
+                        <td><% if(webcam){ %>
+                            <img src="<%= webcam.smallImage %>" style="float: left"/> <%= webcam.partName %><br><%= webcam.price %>
+                            <% } %></td>
+                        <td>
+                            <form action="/buildAPooter" method="post">
+                                <input type="hidden" value="Webcam" name="search">
+                                <input type="submit" value="Select">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Headset</td>
+                        <td><% if(headset){ %>
+                            <img src="<%= headset.smallImage %>" style="float: left"/> <%= headset.partName %><br><%= headset.price %>
+                            <% } %></td>
+                        <td>
+                            <form action="/buildAPooter" method="post">
+                                <input type="hidden" value="Headset" name="search">
+                                <input type="submit" value="Select">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mouse</td>
+                        <td><% if(computermouse){ %>
+                            <img src="<%= computermouse.smallImage %>" style="float: left"/> <%= computermouse.partName %><br><%= computermouse.price %>
+                            <% } %></td>
+                        <td>
+                            <form action="/buildAPooter" method="post">
+                                <input type="hidden" value="Computermouse" name="search">
+                                <input type="submit" value="Select">
+                            </form>
+                        </td>
+                    </tr>
+                </table>
 
             <br/>
-            <% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive ){ %>
+            <% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive || monitor || keyboard || webcam || headset || computermouse ){ %>
                 <div id="amazon">
+
+                    <%  if( computercase )
+                        {
+                        total = (computercase.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if( processor )
+                        {
+                            total = (processor.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( motherboard ) {
+                            total = (motherboard.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( ram )
+                        {
+                            total = (ram.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( powersupply )
+                        {
+                            total = (powersupply.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( graphicscard )
+                        {
+                            total = (graphicscard.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( harddrive )
+                        {
+                            total = (harddrive.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( monitor )
+                        {
+                            total = (monitor.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( keyboard )
+                        {
+                            total = (keyboard.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( webcam )
+                        {
+                            total = (webcam.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( headset )
+                        {
+                            total = (headset.numPrice / 100) + total;
+                        } %>
+                    <%
+                        if ( computermouse )
+                        {
+                            total = (computermouse.numPrice / 100) + total;
+                        } %>
+
+                    <h1>Total Price: $<%= total.toFixed(2) %></h1>
                     <form method="GET" action="http://www.amazon.com/gp/aws/cart/add.html">
                         <input type="image" name="add" src="http://juniortraveller.com/wp-content/uploads/CheckoutAmazon-1.png" />
                         <input type="hidden" name="AWSAccessKeyId" value=<%= awsId %> /><br/>
@@ -133,14 +260,31 @@
                         <input type="hidden" name="ASIN.7" value="<%= processor.ASIN%>"/><br/>
                         <input type="hidden" name="Quantity.7" value="1"/><br/>
                         <% } %>
+                        <% if(monitor) { %>
+                        <input type="hidden" name="ASIN.8" value="<%= monitor.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.8" value="1"/><br/>
+                        <% } %>
+                        <% if(keyboard) { %>
+                        <input type="hidden" name="ASIN.9" value="<%= keyboard.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.9" value="1"/><br/>
+                        <% } %>
+                        <% if(webcam) { %>
+                        <input type="hidden" name="ASIN.10" value="<%= webcam.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.10" value="1"/><br/>
+                        <% } %>
+                        <% if(headset) { %>
+                        <input type="hidden" name="ASIN.11" value="<%= headset.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.11" value="1"/><br/>
+                        <% } %>
+                        <% if(computermouse) { %>
+                        <input type="hidden" name="ASIN.12" value="<%= computermouse.ASIN%>"/><br/>
+                        <input type="hidden" name="Quantity.12" value="1"/><br/>
+                        <% } %>
                     <% } %>
                 </form>
             </div>
-
-
-	</div>
-
+	    </div>
+    </div>
 </div>
-
 </body>
 </html>
