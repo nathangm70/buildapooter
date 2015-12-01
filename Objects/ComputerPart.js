@@ -11,6 +11,7 @@ module.exports = function() {
         mediumImage:"",
         largeImage:"",
         ASIN:"",
-        price:""
+        price:"",
+        numPrice:""
     }
 };
