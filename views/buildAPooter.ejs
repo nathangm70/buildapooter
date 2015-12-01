@@ -3,100 +3,164 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Build-A-Pooter</title>
-	<link rel="stylesheet" href="../stylesheets/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/main.css">
 </head>
 <body>
-<% include templates/navbar.ejs %>
 <% var total = 0; %>
-	<div id="container">
-		<h1 class="sub">Select your parts:</h1>
-		<div id="parts">
-			<table align="center">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Build-A-Pooter</a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/">Home<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/buildAPooter">Build</a></li>
+                <li><a href="/builds">Saved Builds</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" id="login">Login</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-user"></span> Username <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Saved Builds</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Sign Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="page-header">
+    <div class="container">
+        <h1><a href="/">Build-A-Pewter</a></h1>
+    </div>
+</div>
+    <h1 class="sub">Select Part:</h1>
+
+        <div class="container">
+			<table class="table">
 				<tr>
 					<td>Computer Case</td>
-					<td><% if(computercase){ %>
-						<img src="<%= computercase.smallImage %>" style="float: left"/> <%= computercase.partName %><br><%= computercase.price %>
-						<% } %></td>
-                    <td>
-                        <form action="/buildAPooter" method="post">
-                            <input type="hidden" value="Computer Case" name="search">
-                            <input type="submit" value="Select">
-                        </form>
-                    </td>
-				</tr>
+                    <td></td>
+                    <form action="/buildAPooter" method="post">
+                        <input type="hidden" value="Computer Case" name="search">
+                        <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
 
+                    </form>
+                </tr>
+                    <tr><% if(computercase){ %>
+                    <td><img src="<%= computercase.smallImage %>" style="float: left"/></td>
+                    <td><%= computercase.partName %></td>
+                    <td align="right"><%= computercase.price %></td>
+                    <% } %></tr>
+
+
+
+                 </table>
+                <table  class="table">
 				<tr>
 					<td>Mother Board</td>
-					<td><% if(motherboard){ %>
-						<img src="<%= motherboard.smallImage %>" style="float: left"/> <%= motherboard.partName %><br><%= motherboard.price %>
-						<% } %></td>
-                    <td>
-                        <form action="/buildAPooter" method="post">
-                            <input type="hidden" value="Mother Board" name="search">
-                            <input type="submit" value="Select">
-                        </form>
+                    <td><% if(motherboard){ %>
+                    <img src="<%= motherboard.smallImage %>" style="float: left"/>
+                    <p><%= motherboard.partName %></p>
+                    <p><%= motherboard.price %></p>
+                    <% } %>
                     </td>
+                        <form action="/buildAPooter" method="post">
+                           <input type="hidden" value="Mother Board" name="search">
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
+                        </form>
 				</tr>
+                </table>
+            <table class="table">
 				<tr>
 					<td>Ram</td>
 					<td><% if(ram){ %>
-						<img src="<%= ram.smallImage %>" style="float: left"/> <%= ram.partName %><br><%= ram.price %>
+						<img src="<%= ram.smallImage %>" style="float: left"/>
+                        <p><%= ram.partName %></p>
+                        <p><%= ram.price %></p>
 						<% } %></td>
-                    <td>
-                        <form action="/buildAPooter" method="post"
-                                ><input type="hidden" value="Ram" name="search">
-                            <input type="submit" value="Select">
+
+                        <form action="/buildAPooter" method="post">
+                            <input type="hidden" value="Ram" name="search">
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
                         </form>
-                    </td>
 				</tr>
+                </table>
+                <table class="table">
 				<tr>
 					<td>Graphics Card</td>
 					<td><% if(graphicscard){ %>
-						<img src="<%= graphicscard.smallImage %>" style="float: left"/> <%= graphicscard.partName %><br><%= graphicscard.price %>
+						<img src="<%= graphicscard.smallImage %>" style="float: left"/>
+                        <p><%= graphicscard.partName %></p>
+                        <p><%= graphicscard.price %></p>
 						<% } %></td>
-                    <td>
                         <form action="/buildAPooter" method="post">
                             <input type="hidden" value="Graphics Card" name="search">
-                            <input type="submit" value="Select">
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
                         </form>
-                    </td>
 				</tr>
+                </table>
+            <table class="table">
 				<tr>
 					<td>Hard Drive</td>
 					<td><% if(harddrive){ %>
-						<img src="<%= harddrive.smallImage %>" style="float: left"/> <%= harddrive.partName %><br><%= harddrive.price %>
+						<img src="<%= harddrive.smallImage %>" style="float: left"/>
+                        <p><%= harddrive.partName %></p>
+                        <p><%= harddrive.price %></p>
 						<% } %></td>
-                    <td>
                         <form action="/buildAPooter" method="post">
                             <input type="hidden" value="Hard Drive" name="search">
-                            <input type="submit" value="Select">
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
                         </form>
-                    </td>
 				</tr>
+            </table>
+            <table class="table">
 				<tr>
 					<td>Power Supply</td>
 					<td><% if(powersupply){ %>
-						<img src="<%= powersupply.smallImage %>" style="float: left"/> <%= powersupply.partName %><br><%= powersupply.price %>
+						<img src="<%= powersupply.smallImage %>" style="float: left"/>
+                        <p> <%= powersupply.partName %></p>
+                        <p><%= powersupply.price %></p>
 						<% } %></td>
-                    <td>
                         <form action="/buildAPooter" method="post">
                             <input type="hidden" value="Power Supply" name="search">
-                            <input type="submit" value="Select">
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
                         </form>
-                    </td>
 				</tr>
+            </table>
+            <table class="table">
                 <tr>
                     <td>Processor</td>
                     <td><% if(processor){ %>
-                        <img src="<%= processor.smallImage %>" style="float: left"/> <%= processor.partName %><br><%= processor.price %>
-                        <% } %></td>
-                    <td>
+                    <img src="<%= processor.smallImage %>" style="float: left"/>
+                    <p><%= processor.partName %></p>
+                    <p><%= processor.price %></p>
+                    <% } %></td>
                         <form action="/buildAPooter" method="post">
                             <input type="hidden" value="Processor" name="search">
-                            <input type="submit" value="Select">
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
                         </form>
-                    </td>
                 </tr>
+            </table>
+            <table class="table">
+            <br/>
+
+            <% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive ){ %>
 
 			</table>
             <h1 class="sub">Select your peripherals:</h1>
@@ -229,7 +293,7 @@
 
                     <h1>Total Price: $<%= total.toFixed(2) %></h1>
                     <form method="GET" action="http://www.amazon.com/gp/aws/cart/add.html">
-                        <input type="image" name="add" src="http://juniortraveller.com/wp-content/uploads/CheckoutAmazon-1.png" />
+                        <tr><td colspan="3"><input type="image" name="add" src="http://juniortraveller.com/wp-content/uploads/CheckoutAmazon-1.png" /></td></tr>
                         <input type="hidden" name="AWSAccessKeyId" value=<%= awsId %> /><br/>
                         <input type="hidden" name="AssociateTag" value=<%= assocId %> /><br/>
                         <% if(computercase) { %>
@@ -280,11 +344,15 @@
                         <input type="hidden" name="ASIN.12" value="<%= computermouse.ASIN%>"/><br/>
                         <input type="hidden" name="Quantity.12" value="1"/><br/>
                         <% } %>
-                    <% } %>
+                    <% }} %>
                 </form>
+            </table>
+        </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+        integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+        crossorigin="anonymous"></script>
             </div>
 	    </div>
-    </div>
-</div>
 </body>
 </html>
