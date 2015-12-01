@@ -1,5 +1,5 @@
 body{background-image:url("../images/background2.jpg");font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;}
-#homeTable{border-spacing:40px;}
+#homeTable{margin-top:40px;border-spacing:40px;}
 #homeTable td{margin-top:20px;width:400px;border:2px solid black;text-align:center; height:200px;max-height:250px;}
 #homeTable tr:first-child td:first-child{background-image:url("../images/components.jpg")}
 #homeTable tr:first-child td:nth-child(2){background-image:url("../images/builds.jpg")}
@@ -9,77 +9,33 @@ body{background-image:url("../images/background2.jpg");font-family: "Palatino Li
 #homeTable a:hover{opacity:1;background-color:lightskyblue}
 #homeTable a:hover p{visibility: visible}
 .desc{font-size:20px; text-shadow:0px 0px; visibility: hidden}
-#navWrap{z-index:100;position:fixed;margin-top:-8px;margin-bottom:10px;width:100%;height:100px;display:block;background-color:lightblue;}
-#header{float:left;display:inline;color:white;height:100px;letter-spacing:10px;margin-top:-45px;font-size:33px;text-shadow:4px 4px #333333;width:74%}
-#header img{float:left;margin-top:45px;width:100px;height:100px}
-#header a{color:white;text-decoration: none;}
-#header a:hover{text-shadow: 3px 3px black;}
-#navMenu{float:right;padding-top:2px;padding-bottom:2px;color:white;min-height:100px;margin-right:25px;}
-#navMenu li{box-shadow:7px 7px black;background-color:#444444;padding-top:15px;text-align:center;border:4px solid black;border-radius:5px;font-size:18px;width:175px;height:50px;display:block;}
-#navMenu ul ul{display:none;}
-#navMenu ul li:hover > ul{margin-left:-35px;position:absolute;display:block}
-#navMenu li:hover{background-color:#333333;box-shadow:2px 2px black;}
-#navMenu li a:hover{color:red;}
-#container{padding-top:110px;width:90%;border-radius:20px;min-height:800px;margin:0 auto;font-size:20px;}
-p{text-align:center;}
-#form{padding-top:20px;min-height:650px;margin:0 auto;text-align:center;width:825px;}
-#navMenu a{width:100%;height:100%;text-decoration:none;color:white;}
-#parts{padding-top:20px}
-#parts td{text-align:center;margin:0 auto;width:250px;border:4px solid black;}
-#builds{padding-top:20px}
-#builds td{display:block;text-align:center;margin:0 auto;width:250px;border:4px solid black;}
 .sub{text-align:center;}
-button{width:200px;}
-#amazon{float:right; margin:0 auto; width:250px; padding-right: 215px}
 .submit_div{cursor:pointer}
-#price{font-size: 40px; font-weight: bold;}
+.price{width:100px; font-size: 40px; font-weight: bold;text-align:left}
+.table tr{background-color: lightskyblue;}
+.itemName{text-align:left;min-width:300px;}
+.imageSize{width:100px;}
+.page-header h1{text-align:center;font-size:50px;color:white;font-weight:bold;letter-spacing:10px;font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+                text-shadow:5px 5px #333333;}
+.page-header h1:hover{text-shadow:3px 3px #333333;}
+.page-header a{color:white;text-decoration: none;}
+.navbar-default { background-color: lightskyblue;  border-color: #030033;  }
 
 
 
 @media only screen and (max-width: 450px){
-    body{background-image:url("../images/background2.jpg");font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;}
+    #homeTable{margin-top:-20px;}
     #homeTable td{display:block;margin-top:20px;width:200px;border:2px solid black;text-align:center; height:150px;max-height:250px;}
-    #homeTable tr:first-child td:first-child{background-image:url("../images/components.jpg")}
-    #homeTable tr:first-child td:nth-child(2){background-image:url("../images/builds.jpg")}
-    #homeTable tr:nth-child(2) td:first-child{background-image:url("../images/signup.jpg")}
-    #homeTable tr:nth-child(2) td:nth-child(2){background-image:url("../images/about.jpg")}
     #homeTable a{height:100%;width:100%;opacity:.6;display:block;background:whitesmoke;font-size:20px;color:black;text-decoration: none;text-shadow:3px 3px grey;}
     #homeTable a:hover{opacity:1;background-color:lightskyblue}
     #homeTable a:hover p{visibility: visible}
     .desc{font-size:15px; text-shadow:0px 0px; visibility: hidden}
-    #navWrap{position:relative;display:block;margin-bottom:10px;width:100%;height:100px;background-color:lightblue;}
-    #header{color:white;height:50px;margin-top:-10px;font-size:12px;text-shadow:4px 4px #333333;width:100%}
-    #header img{margin-top:10px;width:75px;height:100px}
-    #header a{margin-top:-30px;color:white;text-decoration: none;}
-    #header a:hover{text-shadow: 3px 3px black;}
-    #navMenu{margin-right:55px;margin-top:35px;padding-top:2px;padding-bottom:2px;color:white;min-height:100px;}
-    #navMenu li{box-shadow:7px 7px black;background-color:#444444;padding-top:15px;text-align:center;border:4px solid black;border-radius:5px;font-size:18px;width:150px;height:30px;}
-    #navMenu ul ul{display:none;}
-    #navMenu ul li:hover > ul{display:block}
-    #navMenu li:hover{background-color:#333333;box-shadow:2px 2px black;}
-    #navMenu li a:hover{color:red;}
-    #container{padding-top:0px;width:100%;border-radius:20px;min-height:800px;margin:0 auto;font-size:14px;}
-    p{text-align:center;}
-    #form{padding-top:20px;min-height:650px;margin:0 auto;text-align:center;width:825px;}
-    #navMenu a{width:100%;height:100%;text-decoration:none;color:white;}
-    #parts{padding-top:20px}
-    #parts td{text-align:center;margin:0 auto;width:250px;border:4px solid black;}
-    #builds{padding-top:20px}
-    #builds td{display:block;text-align:center;margin:0 auto;width:250px;border:4px solid black;}
-    .sub{text-align:center;}
-    button{width:200px;}
-    #amazon{float:right; margin:0 auto; width:150px; padding-right: 215px}
-    .submit_div{cursor:pointer}
-    #price{font-size: 40px; font-weight: bold;}
+
+    .table td{display:block;}
+
+    .page-header{font-size:30px;letter-spacing:0px;margin-top:-100px;}
+    .table tr{margin-top:10px;}
 }
 
-@media (min-width:450px) and (max-width:970px){
-    #header{color:white;height:50px;margin-top:-30px;font-size:20px;text-shadow:4px 4px #333333;width:75%}
-    #header img{margin-top:30px;}
-    #homeTable a{font-size: 20px;}
-    .desc{font-size: 12px}
-    #navWrap{position: relative}
-    #navMenu{margin-top:-15px;}
-    #navMenu li{height:25px;width:125px;}
-    #container{padding-top:0px;}
-}
+
+
