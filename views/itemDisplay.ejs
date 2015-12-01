@@ -58,9 +58,9 @@
         <table class="table table-hover">
             <tr>
                 <form method="post" action="itemDisplay">
-                    <td><img id="imgHover" src="<%= items[i].smallImage %>" data-thumbnail-sml="<%= items[i].smallImage %>" data-thumbnail-med="<%= items[i].mediumImage %>"/></td>
-                    <td><p><%= items[i].title %></p></td>
-                    <td><p id="price"><%= items[i].price %></p></td>
+                    <td class="imageSize"><img id="imgHover" src="<%= items[i].smallImage %>" data-thumbnail-sml="<%= items[i].smallImage %>" data-thumbnail-med="<%= items[i].mediumImage %>"/></td>
+                    <td class="itemName"><p><%= items[i].title %></p></td>
+                    <td class="price"><p><%= items[i].price %></p></td>
 
                     <input type="hidden" value="<%= JSON.stringify(items[i]) %>" name="selectedPart">
                     <input type="hidden" value="<%= part %>" name="parttype">

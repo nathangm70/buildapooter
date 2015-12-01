@@ -48,98 +48,115 @@
         <h1><a href="/">Build-A-Pewter</a></h1>
     </div>
 </div>
+    <h1 class="sub">Select Part:</h1>
+
         <div class="container">
-		<h1 class="sub">Select your parts:</h1>
-			<table class="table parts">
+			<table class="table">
 				<tr>
 					<td>Computer Case</td>
-					<% if(computercase){ %>
-                    <td><img src="<%= computercase.smallImage %>" style="float: left"/></td>
-                    <td> <%= computercase.partName %></td>
-                    <td><%= computercase.price %></td>
-                    <% } %>
-                        <form action="/buildAPooter" method="post">
-                            <input type="hidden" value="Computer Case" name="search">
-                            <td><input type="submit" value="Select"></td>
-                        </form>
-				</tr>
+                    <td></td>
+                    <form action="/buildAPooter" method="post">
+                        <input type="hidden" value="Computer Case" name="search">
+                        <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
 
+                    </form>
+                </tr>
+                    <tr><% if(computercase){ %>
+                    <td><img src="<%= computercase.smallImage %>" style="float: left"/></td>
+                    <td><%= computercase.partName %></td>
+                    <td align="right"><%= computercase.price %></td>
+                    <% } %></tr>
+
+
+
+                 </table>
+                <table  class="table">
 				<tr>
 					<td>Mother Board</td>
-					<td><% if(motherboard){ %>
-						<img src="<%= motherboard.smallImage %>" style="float: left"/> <%= motherboard.partName %><br><%= motherboard.price %>
-						<% } %></td>
-                    <td>
-                        <form action="/buildAPooter" method="post">
-                            <input type="hidden" value="Mother Board" name="search">
-                            <input type="submit" value="Select">
-                        </form>
+                    <td><% if(motherboard){ %>
+                    <img src="<%= motherboard.smallImage %>" style="float: left"/>
+                    <p><%= motherboard.partName %></p>
+                    <p><%= motherboard.price %></p>
+                    <% } %>
                     </td>
+                        <form action="/buildAPooter" method="post">
+                           <input type="hidden" value="Mother Board" name="search">
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
+                        </form>
 				</tr>
+                </table>
+            <table class="table">
 				<tr>
 					<td>Ram</td>
 					<td><% if(ram){ %>
-						<img src="<%= ram.smallImage %>" style="float: left"/> <%= ram.partName %><br><%= ram.price %>
+						<img src="<%= ram.smallImage %>" style="float: left"/>
+                        <p><%= ram.partName %></p>
+                        <p><%= ram.price %></p>
 						<% } %></td>
-                    <td>
-                        <form action="/buildAPooter" method="post"
-                                ><input type="hidden" value="Ram" name="search">
-                            <input type="submit" value="Select">
+
+                        <form action="/buildAPooter" method="post">
+                            <input type="hidden" value="Ram" name="search">
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
                         </form>
-                    </td>
 				</tr>
+                </table>
+                <table class="table">
 				<tr>
 					<td>Graphics Card</td>
 					<td><% if(graphicscard){ %>
-						<img src="<%= graphicscard.smallImage %>" style="float: left"/> <%= graphicscard.partName %><br><%= graphicscard.price %>
+						<img src="<%= graphicscard.smallImage %>" style="float: left"/>
+                        <p><%= graphicscard.partName %></p>
+                        <p><%= graphicscard.price %></p>
 						<% } %></td>
-                    <td>
                         <form action="/buildAPooter" method="post">
                             <input type="hidden" value="Graphics Card" name="search">
-                            <input type="submit" value="Select">
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
                         </form>
-                    </td>
 				</tr>
+                </table>
+            <table class="table">
 				<tr>
 					<td>Hard Drive</td>
 					<td><% if(harddrive){ %>
-						<img src="<%= harddrive.smallImage %>" style="float: left"/> <%= harddrive.partName %><br><%= harddrive.price %>
+						<img src="<%= harddrive.smallImage %>" style="float: left"/>
+                        <p><%= harddrive.partName %></p>
+                        <p><%= harddrive.price %></p>
 						<% } %></td>
-                    <td>
                         <form action="/buildAPooter" method="post">
                             <input type="hidden" value="Hard Drive" name="search">
-                            <input type="submit" value="Select">
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
                         </form>
-                    </td>
 				</tr>
+            </table>
+            <table class="table">
 				<tr>
 					<td>Power Supply</td>
 					<td><% if(powersupply){ %>
-						<img src="<%= powersupply.smallImage %>" style="float: left"/> <%= powersupply.partName %><br><%= powersupply.price %>
+						<img src="<%= powersupply.smallImage %>" style="float: left"/>
+                        <p> <%= powersupply.partName %></p>
+                        <p><%= powersupply.price %></p>
 						<% } %></td>
-                    <td>
                         <form action="/buildAPooter" method="post">
                             <input type="hidden" value="Power Supply" name="search">
-                            <input type="submit" value="Select">
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
                         </form>
-                    </td>
 				</tr>
+            </table>
+            <table class="table">
                 <tr>
                     <td>Processor</td>
-                    <% if(processor){ %>
-                    <td><img src="<%= processor.smallImage %>" style="float: left"/></td>
-                    <td><%= processor.partName %></td>
-                    <td><%= processor.price %></td>
-                    <% } %>
-                    <td>
+                    <td><% if(processor){ %>
+                    <img src="<%= processor.smallImage %>" style="float: left"/>
+                    <p><%= processor.partName %></p>
+                    <p><%= processor.price %></p>
+                    <% } %></td>
                         <form action="/buildAPooter" method="post">
                             <input type="hidden" value="Processor" name="search">
-                            <td><input type="submit" value="Select"></td>
+                            <td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
                         </form>
-                    </td>
                 </tr>
-
-
+            </table>
+            <table class="table">
             <br/>
 
             <% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive ){ %>
@@ -175,11 +192,9 @@
                         <% if(processor) { %>
                         <input type="hidden" name="ASIN.7" value="<%= processor.ASIN%>"/><br/>
                         <input type="hidden" name="Quantity.7" value="1"/><br/>
-
                         <% } %>
                     <% } %>
                 </form>
-
             </table>
         </div>
 
