@@ -13,6 +13,7 @@ var login = require('./routes/login');
 var builds = require('./routes/builds');
 var itemDisplay = require('./routes/itemDisplay');
 var about = require('./routes/about');
+var createBuild = require('./routes/createBuild');
 
 var app = express();
 //setup session information
@@ -40,6 +41,7 @@ app.use('/createAccount', createAccount);
 app.use('/login', login);
 app.use('/builds', builds);
 app.use('/itemDisplay', itemDisplay);
+app.use('/createBuild', createBuild);
 app.use('/about', about);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

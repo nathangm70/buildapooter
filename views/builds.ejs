@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Build-A-Pooter</title>
-	<link rel="stylesheet" href="../stylesheets/main.css">
-</head>
-<body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Build-A-Pooter</title>
+		<link rel="stylesheet" href="../stylesheets/main.css">
+	</head>
+	<body>
 
-<% include templates/navbar.ejs %>
+	<% include templates/navbar.ejs %>
 
-	<div id="container">
-		<h1 class="sub">User Saved Builds:</h1>
-		<div id="builds">
-			<table align="center">
-				<tr>
-					<td>Title</td>
-					<td>Image</td>
-					<td>Details</td>
-				</tr>
+		<div id="container">
+			<h1 class="sub">User Saved Builds:</h1>
+			<div id="builds">
+				<table align="center">
+					<tr>
+						<td>Title</td>
+						<td>Image</td>
+						<td>Details</td>
+					</tr>
 
-				<tr>
-					<td>Title</td>
-					<td>Image</td>
-					<td>Details</td>
-				</tr>
-				<tr>
-					<td>Title</td>
-					<td>Image</td>
-					<td>Details</td>
-				</tr>
-			</table>
+					<tr>
+						<td>Title</td>
+						<td>Image</td>
+						<td>Details</td>
+					</tr>
+					<tr>
+						<td>Title</td>
+						<td>Image</td>
+						<td>Details</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<form action="/builds" method="post">
+					<input type="hidden" value="createbuild" name="option"/>
+					<input type="submit" value="createbuild"/>
+				</form>
+			</div>
 		</div>
-	</div>
 
-</body>
+	</body>
 </html>

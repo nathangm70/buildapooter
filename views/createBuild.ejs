@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Build-A-Pooter</title>
+	<link rel="stylesheet" href="../stylesheets/main.css">
+</head>
+<body>
+<% include templates/navbar.ejs %>
+<% var total = 0; %>
+<div id="container">
+	<h1 class="sub">Select your parts:</h1>
+	<div id="parts">
+		<table align="center">
+			<tr>
+				<td>Computer Case</td>
+				<td><% if(computercase){ %>
+					<img src="<%= computercase.smallImage %>" style="float: left"/> <%= computercase.partName %><br><%= computercase.price %>
+					<% } %></td>
+				<td>
+					<form action="/createBuild" method="post">
+						<input type="hidden" value="Computer Case" name="parttype">
+						<input type="submit" value="Select">
+					</form>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Mother Board</td>
+				<td><% if(motherboard){ %>
+					<img src="<%= motherboard.smallImage %>" style="float: left"/> <%= motherboard.partName %><br><%= motherboard.price %>
+					<% } %></td>
+				<td>
+					<form action="/createBuild" method="post">
+						<input type="hidden" value="Mother Board" name="parttype">
+						<input type="submit" value="Select">
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>Ram</td>
+				<td><% if(ram){ %>
+					<img src="<%= ram.smallImage %>" style="float: left"/> <%= ram.partName %><br><%= ram.price %>
+					<% } %></td>
+				<td>
+					<form action="/createBuild" method="post"
+							><input type="hidden" value="Ram" name="parttype">
+						<input type="submit" value="Select">
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>Graphics Card</td>
+				<td><% if(graphicscard){ %>
+					<img src="<%= graphicscard.smallImage %>" style="float: left"/> <%= graphicscard.partName %><br><%= graphicscard.price %>
+					<% } %></td>
+				<td>
+					<form action="/createBuild" method="post">
+						<input type="hidden" value="Graphics Card" name="parttype">
+						<input type="submit" value="Select">
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>Hard Drive</td>
+				<td><% if(harddrive){ %>
+					<img src="<%= harddrive.smallImage %>" style="float: left"/> <%= harddrive.partName %><br><%= harddrive.price %>
+					<% } %></td>
+				<td>
+					<form action="/createBuild" method="post">
+						<input type="hidden" value="Hard Drive" name="parttype">
+						<input type="submit" value="Select">
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>Power Supply</td>
+				<td><% if(powersupply){ %>
+					<img src="<%= powersupply.smallImage %>" style="float: left"/> <%= powersupply.partName %><br><%= powersupply.price %>
+					<% } %></td>
+				<td>
+					<form action="/createBuild" method="post">
+						<input type="hidden" value="Power Supply" name="parttype">
+						<input type="submit" value="Select">
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>Processor</td>
+				<td><% if(processor){ %>
+					<img src="<%= processor.smallImage %>" style="float: left"/> <%= processor.partName %><br><%= processor.price %>
+					<% } %></td>
+				<td>
+					<form action="/createBuild" method="post">
+						<input type="hidden" value="Processor" name="parttype">
+						<input type="submit" value="Select">
+					</form>
+				</td>
+			</tr>
+
+		</table>
+		<h1 class="sub">Select your peripherals:</h1>
+		<div id="parts">
+			<table align="center">
+				<tr>
+					<td>Monitor</td>
+					<td><% if(monitor){ %>
+						<img src="<%= monitor.smallImage %>" style="float: left"/> <%= monitor.partName %><br><%= monitor.price %>
+						<% } %></td>
+					<td>
+						<form action="/createBuild" method="post">
+							<input type="hidden" value="Monitor" name="parttype">
+							<input type="submit" value="Select">
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>Keyboard</td>
+					<td><% if(keyboard){ %>
+						<img src="<%= keyboard.smallImage %>" style="float: left"/> <%= keyboard.partName %><br><%= keyboard.price %>
+						<% } %></td>
+					<td>
+						<form action="/createBuild" method="post">
+							<input type="hidden" value="Keyboard" name="parttype">
+							<input type="submit" value="Select">
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>Webcam</td>
+					<td><% if(webcam){ %>
+						<img src="<%= webcam.smallImage %>" style="float: left"/> <%= webcam.partName %><br><%= webcam.price %>
+						<% } %></td>
+					<td>
+						<form action="/createBuild" method="post">
+							<input type="hidden" value="Webcam" name="parttype">
+							<input type="submit" value="Select">
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>Headset</td>
+					<td><% if(headset){ %>
+						<img src="<%= headset.smallImage %>" style="float: left"/> <%= headset.partName %><br><%= headset.price %>
+						<% } %></td>
+					<td>
+						<form action="/createBuild" method="post">
+							<input type="hidden" value="Headset" name="parttype">
+							<input type="submit" value="Select">
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>Mouse</td>
+					<td><% if(computermouse){ %>
+						<img src="<%= computermouse.smallImage %>" style="float: left"/> <%= computermouse.partName %><br><%= computermouse.price %>
+						<% } %></td>
+					<td>
+						<form action="/createBuild" method="post">
+							<input type="hidden" value="Computermouse" name="parttype">
+							<input type="submit" value="Select">
+						</form>
+					</td>
+				</tr>
+			</table>
+
+			<br/>
+		</div>
+	</div>
+</div>
+</body>
+</html>
