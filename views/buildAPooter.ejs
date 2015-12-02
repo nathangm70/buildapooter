@@ -235,6 +235,16 @@
                         <td align="right" class="price"><%= webcam.price %></td>
                         <% } %>
 
+                        <td>Mouse</td>
+                        <td><% if(computermouse){ %>
+                            <img src="<%= computermouse.smallImage %>" style="float: left"/> <%= computermouse.partName %><br><%= computermouse.price %>
+                            <% } %></td>
+                        <td>
+                            <form action="/buildAPooter" method="post">
+                                <input type="hidden" value="Wire Mouse" name="search">
+                                <input type="submit" value="Select">
+                            </form>
+                        </td>
                     </tr>
                 </table>
                 <table class="table">
