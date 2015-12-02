@@ -10,7 +10,7 @@ module.exports = function() {
         smallImage:"",
         mediumImage:"",
         largeImage:"",
-        ASIN:"",
+        aSIN:"",
         price:"",
         numPrice:""
     }

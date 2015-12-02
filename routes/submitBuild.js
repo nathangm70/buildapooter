@@ -15,7 +15,7 @@ router.post('/', function(req, res){
     req.session.build.name = req.body.buildName;
 
     socket.write('4\n');
-    socket.write(req.session.user.email.toString() + '\n');
+   /* socket.write(req.session.user.email.toString() + '\n');
     socket.write(req.session.build.name.toString() + '\n');
     console.log(JSON.stringify(req.session.build.computercase));
     socket.write(JSON.stringify(req.session.build.computercase) + '\n');
@@ -29,13 +29,13 @@ router.post('/', function(req, res){
     socket.write(JSON.stringify(req.session.build.keyboard) + '\n');
     socket.write(JSON.stringify(req.session.build.webcam) + '\n');
     socket.write(JSON.stringify(req.session.build.headset) + '\n');
-    socket.write(JSON.stringify(req.session.build.computermouse) + '\n');
+    socket.write(JSON.stringify(req.session.build.computermouse) + '\n');*/
 
 
 
-    //socket.write(JSON.stringify(req.session.build) + '\n');
-    //console.log(JSON.stringify(req.session.build));
-    //socket.write(req.session.user.email.toString() + '\n');
+    socket.write(JSON.stringify(req.session.build) + '\n');
+    console.log(JSON.stringify(req.session.build));
+    socket.write(req.session.user.email.toString() + '\n');
 
 
 

@@ -38,7 +38,7 @@ function ItemSearchCallback(err, results){
         //grab the name and the title of the item
         //compCase.name = results.ItemSearchResponse.Items[0].Item[i].Name;
         part.title = results.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0].Title[0];
-        part.ASIN = results.ItemSearchResponse.Items[0].Item[i].ASIN[0];
+        part.aSIN = results.ItemSearchResponse.Items[0].Item[i].ASIN[0];
 
         part.partName = results.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0].Label[0];
 
