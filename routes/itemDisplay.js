@@ -61,7 +61,7 @@ router.post('/', function(req, res){
         powersupply: req.session.powersupply, discdrive: req.session.discdrive, processor: req.session.processor,
         monitor: req.session.monitor, keyboard: req.session.keyboard, webcam: req.session.webcam,
         headset: req.session.headset, computermouse: req.session.computermouse,
-        awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
+        awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId, user: req.session.user
     });
 });
 

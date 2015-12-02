@@ -3,169 +3,358 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Build-A-Pooter</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+		  integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+		  crossorigin="anonymous">
 	<link rel="stylesheet" href="../stylesheets/main.css">
 </head>
 <body>
-<% include templates/navbar.ejs %>
 <% var total = 0; %>
-<div id="container">
-	<h1 class="sub">Select your parts:</h1>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Build-A-Pooter</a>
+		</div>
+
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li ><a href="/">Home<span class="sr-only">(current)</span></a></li>
+				<li><a href="/buildAPooter">Build</a></li>
+				<li class="active"><a href="/builds">Saved Builds</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#" id="login">Login</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-user"></span> Username <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Profile</a></li>
+						<li><a href="#">Saved Builds</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Sign Out</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="page-header">
+	<div class="container">
+		<h1><a href="/">Build-A-Pewter</a></h1>
+	</div>
+</div>
+<h1 class="sub">Select Part:</h1>
+
+<div class="container">
+	<table class="table">
+
+		<tr>
+			<td>Computer Case</td>
+			<td></td>
+			<form action="/createBuild" method="post">
+				<input type="hidden" value="Computer Case" name="search">
+				<td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
+
+			</form>
+		</tr>
+		<tr><% if(computercase){ %>
+			<td><img src="<%= computercase.smallImage %>" style="float: left"/></td>
+			<td><%= computercase.partName %></td>
+			<td align="right"><%= computercase.price %></td>
+			<% } %></tr>
+
+
+
+	</table>
+	<table  class="table">
+		<tr>
+			<td>Mother Board</td>
+			<td><% if(motherboard){ %>
+				<img src="<%= motherboard.smallImage %>" style="float: left"/>
+				<p><%= motherboard.partName %></p>
+				<p><%= motherboard.price %></p>
+				<% } %>
+			</td>
+			<form action="/createBuild" method="post">
+				<input type="hidden" value="Mother Board" name="search">
+				<td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
+			</form>
+		</tr>
+	</table>
+	<table class="table">
+		<tr>
+			<td>Ram</td>
+			<td><% if(ram){ %>
+				<img src="<%= ram.smallImage %>" style="float: left"/>
+				<p><%= ram.partName %></p>
+				<p><%= ram.price %></p>
+				<% } %></td>
+
+			<form action="/createBuild" method="post">
+				<input type="hidden" value="Ram" name="search">
+				<td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
+			</form>
+		</tr>
+	</table>
+	<table class="table">
+		<tr>
+			<td>Graphics Card</td>
+			<td><% if(graphicscard){ %>
+				<img src="<%= graphicscard.smallImage %>" style="float: left"/>
+				<p><%= graphicscard.partName %></p>
+				<p><%= graphicscard.price %></p>
+				<% } %></td>
+			<form action="/createBuild" method="post">
+				<input type="hidden" value="Graphics Card" name="search">
+				<td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
+			</form>
+		</tr>
+	</table>
+	<table class="table">
+		<tr>
+			<td>Hard Drive</td>
+			<td><% if(harddrive){ %>
+				<img src="<%= harddrive.smallImage %>" style="float: left"/>
+				<p><%= harddrive.partName %></p>
+				<p><%= harddrive.price %></p>
+				<% } %></td>
+			<form action="/createBuild" method="post">
+				<input type="hidden" value="Hard Drive" name="search">
+				<td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
+			</form>
+		</tr>
+	</table>
+	<table class="table">
+		<tr>
+			<td>Power Supply</td>
+			<td><% if(powersupply){ %>
+				<img src="<%= powersupply.smallImage %>" style="float: left"/>
+				<p> <%= powersupply.partName %></p>
+				<p><%= powersupply.price %></p>
+				<% } %></td>
+			<form action="/createBuild" method="post">
+				<input type="hidden" value="Power Supply" name="search">
+				<td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
+			</form>
+		</tr>
+	</table>
+	<table class="table">
+		<tr>
+			<td>Processor</td>
+			<td><% if(processor){ %>
+				<img src="<%= processor.smallImage %>" style="float: left"/>
+				<p><%= processor.partName %></p>
+				<p><%= processor.price %></p>
+				<% } %></td>
+			<form action="/createBuild" method="post">
+				<input type="hidden" value="Processor" name="search">
+				<td align="right"><input class="btn btn-default" type="submit" value="Select"></td>
+			</form>
+		</tr>
+	</table>
+	<table class="table">
+		<br/>
+
+		<% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive ){ %>
+
+	</table>
+	<h1 class="sub">Select your peripherals:</h1>
 	<div id="parts">
 		<table align="center">
 			<tr>
-				<td>Computer Case</td>
-				<td><% if(computercase){ %>
-					<img src="<%= computercase.smallImage %>" style="float: left"/> <%= computercase.partName %><br><%= computercase.price %>
+				<td>Monitor</td>
+				<td><% if(monitor){ %>
+					<img src="<%= monitor.smallImage %>" style="float: left"/> <%= monitor.partName %><br><%= monitor.price %>
 					<% } %></td>
 				<td>
 					<form action="/createBuild" method="post">
-						<input type="hidden" value="Computer Case" name="parttype">
-						<input type="submit" value="Select">
-					</form>
-				</td>
-			</tr>
-
-			<tr>
-				<td>Mother Board</td>
-				<td><% if(motherboard){ %>
-					<img src="<%= motherboard.smallImage %>" style="float: left"/> <%= motherboard.partName %><br><%= motherboard.price %>
-					<% } %></td>
-				<td>
-					<form action="/createBuild" method="post">
-						<input type="hidden" value="Mother Board" name="parttype">
+						<input type="hidden" value="Monitor" name="search">
 						<input type="submit" value="Select">
 					</form>
 				</td>
 			</tr>
 			<tr>
-				<td>Ram</td>
-				<td><% if(ram){ %>
-					<img src="<%= ram.smallImage %>" style="float: left"/> <%= ram.partName %><br><%= ram.price %>
+				<td>Keyboard</td>
+				<td><% if(keyboard){ %>
+					<img src="<%= keyboard.smallImage %>" style="float: left"/> <%= keyboard.partName %><br><%= keyboard.price %>
 					<% } %></td>
 				<td>
-					<form action="/createBuild" method="post"
-							><input type="hidden" value="Ram" name="parttype">
+					<form action="/createBuild" method="post">
+						<input type="hidden" value="Keyboard" name="search">
 						<input type="submit" value="Select">
 					</form>
 				</td>
 			</tr>
 			<tr>
-				<td>Graphics Card</td>
-				<td><% if(graphicscard){ %>
-					<img src="<%= graphicscard.smallImage %>" style="float: left"/> <%= graphicscard.partName %><br><%= graphicscard.price %>
+				<td>Webcam</td>
+				<td><% if(webcam){ %>
+					<img src="<%= webcam.smallImage %>" style="float: left"/> <%= webcam.partName %><br><%= webcam.price %>
 					<% } %></td>
 				<td>
 					<form action="/createBuild" method="post">
-						<input type="hidden" value="Graphics Card" name="parttype">
+						<input type="hidden" value="Webcam" name="search">
 						<input type="submit" value="Select">
 					</form>
 				</td>
 			</tr>
 			<tr>
-				<td>Hard Drive</td>
-				<td><% if(harddrive){ %>
-					<img src="<%= harddrive.smallImage %>" style="float: left"/> <%= harddrive.partName %><br><%= harddrive.price %>
+				<td>Headset</td>
+				<td><% if(headset){ %>
+					<img src="<%= headset.smallImage %>" style="float: left"/> <%= headset.partName %><br><%= headset.price %>
 					<% } %></td>
 				<td>
 					<form action="/createBuild" method="post">
-						<input type="hidden" value="Hard Drive" name="parttype">
+						<input type="hidden" value="Headset" name="search">
 						<input type="submit" value="Select">
 					</form>
 				</td>
 			</tr>
 			<tr>
-				<td>Power Supply</td>
-				<td><% if(powersupply){ %>
-					<img src="<%= powersupply.smallImage %>" style="float: left"/> <%= powersupply.partName %><br><%= powersupply.price %>
+				<td>Mouse</td>
+				<td><% if(computermouse){ %>
+					<img src="<%= computermouse.smallImage %>" style="float: left"/> <%= computermouse.partName %><br><%= computermouse.price %>
 					<% } %></td>
 				<td>
 					<form action="/createBuild" method="post">
-						<input type="hidden" value="Power Supply" name="parttype">
+						<input type="hidden" value="Computermouse" name="search">
 						<input type="submit" value="Select">
 					</form>
 				</td>
 			</tr>
-			<tr>
-				<td>Processor</td>
-				<td><% if(processor){ %>
-					<img src="<%= processor.smallImage %>" style="float: left"/> <%= processor.partName %><br><%= processor.price %>
-					<% } %></td>
-				<td>
-					<form action="/createBuild" method="post">
-						<input type="hidden" value="Processor" name="parttype">
-						<input type="submit" value="Select">
-					</form>
-				</td>
-			</tr>
-
 		</table>
-		<h1 class="sub">Select your peripherals:</h1>
-		<div id="parts">
-			<table align="center">
-				<tr>
-					<td>Monitor</td>
-					<td><% if(monitor){ %>
-						<img src="<%= monitor.smallImage %>" style="float: left"/> <%= monitor.partName %><br><%= monitor.price %>
-						<% } %></td>
-					<td>
-						<form action="/createBuild" method="post">
-							<input type="hidden" value="Monitor" name="parttype">
-							<input type="submit" value="Select">
-						</form>
-					</td>
-				</tr>
-				<tr>
-					<td>Keyboard</td>
-					<td><% if(keyboard){ %>
-						<img src="<%= keyboard.smallImage %>" style="float: left"/> <%= keyboard.partName %><br><%= keyboard.price %>
-						<% } %></td>
-					<td>
-						<form action="/createBuild" method="post">
-							<input type="hidden" value="Keyboard" name="parttype">
-							<input type="submit" value="Select">
-						</form>
-					</td>
-				</tr>
-				<tr>
-					<td>Webcam</td>
-					<td><% if(webcam){ %>
-						<img src="<%= webcam.smallImage %>" style="float: left"/> <%= webcam.partName %><br><%= webcam.price %>
-						<% } %></td>
-					<td>
-						<form action="/createBuild" method="post">
-							<input type="hidden" value="Webcam" name="parttype">
-							<input type="submit" value="Select">
-						</form>
-					</td>
-				</tr>
-				<tr>
-					<td>Headset</td>
-					<td><% if(headset){ %>
-						<img src="<%= headset.smallImage %>" style="float: left"/> <%= headset.partName %><br><%= headset.price %>
-						<% } %></td>
-					<td>
-						<form action="/createBuild" method="post">
-							<input type="hidden" value="Headset" name="parttype">
-							<input type="submit" value="Select">
-						</form>
-					</td>
-				</tr>
-				<tr>
-					<td>Mouse</td>
-					<td><% if(computermouse){ %>
-						<img src="<%= computermouse.smallImage %>" style="float: left"/> <%= computermouse.partName %><br><%= computermouse.price %>
-						<% } %></td>
-					<td>
-						<form action="/createBuild" method="post">
-							<input type="hidden" value="Computermouse" name="parttype">
-							<input type="submit" value="Select">
-						</form>
-					</td>
-				</tr>
-			</table>
 
-			<br/>
+		<br/>
+		<% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive || monitor || keyboard || webcam || headset || computermouse ){ %>
+		<div id="amazon">
+
+			<%  if( computercase )
+			{
+				total = (computercase.numPrice / 100) + total;
+			} %>
+			<%
+				if( processor )
+				{
+					total = (processor.numPrice / 100) + total;
+				} %>
+			<%
+				if ( motherboard ) {
+					total = (motherboard.numPrice / 100) + total;
+				} %>
+			<%
+				if ( ram )
+				{
+					total = (ram.numPrice / 100) + total;
+				} %>
+			<%
+				if ( powersupply )
+				{
+					total = (powersupply.numPrice / 100) + total;
+				} %>
+			<%
+				if ( graphicscard )
+				{
+					total = (graphicscard.numPrice / 100) + total;
+				} %>
+			<%
+				if ( harddrive )
+				{
+					total = (harddrive.numPrice / 100) + total;
+				} %>
+			<%
+				if ( monitor )
+				{
+					total = (monitor.numPrice / 100) + total;
+				} %>
+			<%
+				if ( keyboard )
+				{
+					total = (keyboard.numPrice / 100) + total;
+				} %>
+			<%
+				if ( webcam )
+				{
+					total = (webcam.numPrice / 100) + total;
+				} %>
+			<%
+				if ( headset )
+				{
+					total = (headset.numPrice / 100) + total;
+				} %>
+			<%
+				if ( computermouse )
+				{
+					total = (computermouse.numPrice / 100) + total;
+				} %>
+
+			<h1>Total Price: $<%= total.toFixed(2) %></h1>
+			<form method="GET" action="http://www.amazon.com/gp/aws/cart/add.html">
+				<tr><td colspan="3"><input type="image" name="add" src="http://juniortraveller.com/wp-content/uploads/CheckoutAmazon-1.png" /></td></tr>
+				<input type="hidden" name="AWSAccessKeyId" value=<%= awsId %> /><br/>
+				<input type="hidden" name="AssociateTag" value=<%= assocId %> /><br/>
+				<% if(computercase) { %>
+				<input type="hidden" name="ASIN.1" value="<%= computercase.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.1" value="1"/><br/>
+				<% } %>
+				<% if(motherboard) { %>
+				<input type="hidden" name="ASIN.2" value="<%= motherboard.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.2" value="1"/><br/>
+				<% } %>
+				<% if(ram) { %>
+				<input type="hidden" name="ASIN.3" value="<%= ram.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.3" value="1"/><br/>
+				<% } %>
+				<% if(graphicscard) { %>
+				<input type="hidden" name="ASIN.4" value="<%= graphicscard.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.4" value="1"/><br/>
+				<% } %>
+				<% if(harddrive) { %>
+				<input type="hidden" name="ASIN.5" value="<%= harddrive.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.5" value="1"/><br/>
+				<% } %>
+				<% if(powersupply) { %>
+				<input type="hidden" name="ASIN.6" value="<%= powersupply.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.6" value="1"/><br/>
+				<% } %>
+				<% if(processor) { %>
+				<input type="hidden" name="ASIN.7" value="<%= processor.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.7" value="1"/><br/>
+				<% } %>
+				<% if(monitor) { %>
+				<input type="hidden" name="ASIN.8" value="<%= monitor.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.8" value="1"/><br/>
+				<% } %>
+				<% if(keyboard) { %>
+				<input type="hidden" name="ASIN.9" value="<%= keyboard.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.9" value="1"/><br/>
+				<% } %>
+				<% if(webcam) { %>
+				<input type="hidden" name="ASIN.10" value="<%= webcam.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.10" value="1"/><br/>
+				<% } %>
+				<% if(headset) { %>
+				<input type="hidden" name="ASIN.11" value="<%= headset.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.11" value="1"/><br/>
+				<% } %>
+				<% if(computermouse) { %>
+				<input type="hidden" name="ASIN.12" value="<%= computermouse.ASIN%>"/><br/>
+				<input type="hidden" name="Quantity.12" value="1"/><br/>
+				<% } %>
+				<% }} %>
+			</form>
+			<form method="post" action="submitBuild">
+				Build Name:<input type="text" name="buildName"/><input type="submit" value="Create Build">
+			</form>
 		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+				integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+				crossorigin="anonymous"></script>
 	</div>
 </div>
 </body>

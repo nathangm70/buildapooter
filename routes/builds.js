@@ -3,7 +3,8 @@ var router = express.Router();
 
 var ComputerBuild = require('../Objects/ComputerBuild');
 var ComputerPart = require('../Objects/ComputerPart');
-var itemSearchHelper = require('../ItemSearch/AmazonItemSearcher');
+
+var awsCredentials = require('../../amazonInfo.json');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -29,7 +30,8 @@ router.post('/', function(req, res, next) {
                 graphicscard: req.session.build.graphicscard, harddrive: req.session.build.harddrive,
                 powersupply: req.session.build.powersupply, discdrive: req.session.build.discdrive, processor: req.session.build.processor,
                 monitor: req.session.build.monitor, keyboard: req.session.build.keyboard, webcam: req.session.build.webcam,
-                headset: req.session.build.headset, computermouse: req.session.build.computermouse
+                headset: req.session.build.headset, computermouse: req.session.build.computermouse,
+                awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
             });
         break;
     }

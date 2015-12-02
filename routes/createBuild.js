@@ -7,6 +7,8 @@ var router = express.Router();
 var itemSearchHelper = require('../ItemSearch/AmazonItemSearcher');
 var NewComputerPart = require('../Objects/ComputerPart');
 
+var awsCredentials = require('../../amazonInfo.json');
+
 router.get('/', function(req, res, next) {
     res.render('createBuild', {
         title: 'Build A Pooter', computercase: req.session.build.computercase,
@@ -14,7 +16,8 @@ router.get('/', function(req, res, next) {
         graphicscard: req.session.build.graphicscard, harddrive: req.session.build.harddrive,
         powersupply: req.session.build.powersupply, discdrive: req.session.build.discdrive, processor: req.session.build.processor,
         monitor: req.session.build.monitor, keyboard: req.session.build.keyboard, webcam: req.session.build.webcam,
-        headset: req.session.build.headset, computermouse: req.session.build.computermouse
+        headset: req.session.build.headset, computermouse: req.session.build.computermouse,
+        awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
     });
 });
 

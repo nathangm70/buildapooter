@@ -2,14 +2,16 @@
  * Created by Nathan on 2015-11-30.
  */
 
-var express =  requre('express');
-var router = express.router();
+var express = require('express');
+var router = express.Router();
+
+var awsCredentials = require('../../amazonInfo.json');
 
 router.get('/', function(req, res, next){
     res.render('itemBuildDisplay', {title: 'Build A Pooter'});
 });
 
-router.post('/', function(req, res, next){
+router.post('/', function(req, res){
     switch(req.body.parttype) {
         case 'Computer Case':
             req.session.build.computercase = JSON.parse(req.body.selectedPart);
@@ -52,13 +54,15 @@ router.post('/', function(req, res, next){
             break;
     }
 
+    console.log('goign back to create build');
     res.render('createBuild', {
-        title: 'Build A Pooter', computercase: req.build.session.computercase,
-        motherboard: req.build.session.motherboard, ram: req.build.session.ram,
-        graphicscard: req.build.session.graphicscard, harddrive: req.build.session.harddrive,
-        powersupply: req.build.session.powersupply, discdrive: req.build.session.discdrive, processor: req.build.session.processor,
-        monitor: req.build.session.monitor, keyboard: req.build.session.keyboard, webcam: req.build.session.webcam,
-        headset: req.build.session.headset, computermouse: req.build.session.computermouse
+        title: 'Build A Pooter', computercase: req.session.build.computercase,
+        motherboard: req.session.build.motherboard, ram: req.session.build.ram,
+        graphicscard: req.session.build.graphicscard, harddrive: req.session.build.harddrive,
+        powersupply: req.session.build.powersupply, discdrive: req.session.build.discdrive, processor: req.session.build.processor,
+        monitor: req.session.build.monitor, keyboard: req.session.build.keyboard, webcam: req.session.build.webcam,
+        headset: req.session.build.headset, computermouse: req.session.build.computermouse,
+        awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId, user: req.session.user
     });
 
 });

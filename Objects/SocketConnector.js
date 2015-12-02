@@ -9,7 +9,7 @@ module.exports = function() {
         getSocket: function() {
             var socket = new net.Socket();
             //socket.connect(50000, '10.48.8.161');
-            socket.connect(50000, 'localhost');
+            socket.connect(50000, '10.48.12.252');
             return socket;
         }
     }

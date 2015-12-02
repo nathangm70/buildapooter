@@ -6,6 +6,7 @@ var ComputerPart = require('./ComputerPart');
 module.exports = function() {
     return {
         //object stuff here
+        name: '',
         computercase: new ComputerPart(),
         processor: new ComputerPart(),
         motherboard: new ComputerPart(),
@@ -17,6 +18,6 @@ module.exports = function() {
         keyboard: new ComputerPart(),
         webcam: new ComputerPart(),
         headset: new ComputerPart(),
-        computer: new ComputerPart()
+        computermouse: new ComputerPart()
     }
 };
