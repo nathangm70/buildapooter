@@ -6,7 +6,7 @@ var awsCredentials = require('../../amazonInfo.json');
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('itemDisplay',
-        { title: 'Build A Pooter' });
+        { title: 'Build A Pooter' , user: req.session.user});
 });
 
 router.post('/', function(req, res){

@@ -7,7 +7,7 @@ var User = require('../Objects/User');
 /* GET home page. */
 router.get('/', function(req, res, next)
 {
-    res.render('createAccount', { title: 'Build A Pooter' , passFail: false});
+    res.render('createAccount', { title: 'Build A Pooter' , passFail: false, user: req.session.user});
 });
 
 router.post('/', function(req, res)
@@ -49,7 +49,7 @@ router.post('/', function(req, res)
     } else {
         //they goofed up the password post it back
         //display a passwords dont match message
-        res.render('createAccount', { title: 'Build A Pooter', passFail: true});
+        res.render('createAccount', { title: 'Build A Pooter', passFail: true, user: req.session.user});
     }
 
 });

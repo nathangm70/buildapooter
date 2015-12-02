@@ -17,14 +17,15 @@ router.get('/', function(req, res, next) {
         powersupply: req.session.build.powersupply, discdrive: req.session.build.discdrive, processor: req.session.build.processor,
         monitor: req.session.build.monitor, keyboard: req.session.build.keyboard, webcam: req.session.build.webcam,
         headset: req.session.build.headset, computermouse: req.session.build.computermouse,
-        awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
+        awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId,
+        user: req.session.user
     });
 });
 
 router.post('/', function(req, res, next) {
     itemSearchHelper.searchForItemNamed(req.body.search, function(err, results){
         var items = ItemSearchCallback(err, results);
-        res.render('itemBuildDisplay', {items: items, part: req.body.search});
+        res.render('itemBuildDisplay', {items: items, part: req.body.search, user: req.session.user});
     });
 });
 

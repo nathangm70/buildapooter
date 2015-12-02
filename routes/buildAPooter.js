@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res){
     itemSearchHelper.searchForItemNamed(req.body.search, function(err, results){
         var items = ItemSearchCallback(err, results);
-        res.render('itemDisplay', {items: items, part: req.body.search});
+        res.render('itemDisplay', {items: items, part: req.body.search, user: req.session.user});
     });
 });
 

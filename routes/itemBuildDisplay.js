@@ -8,7 +8,7 @@ var router = express.Router();
 var awsCredentials = require('../../amazonInfo.json');
 
 router.get('/', function(req, res, next){
-    res.render('itemBuildDisplay', {title: 'Build A Pooter'});
+    res.render('itemBuildDisplay', {title: 'Build A Pooter', user: req.session.user});
 });
 
 router.post('/', function(req, res){

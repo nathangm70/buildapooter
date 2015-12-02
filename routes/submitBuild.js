@@ -43,7 +43,7 @@ router.post('/', function(req, res){
        //do some things
         console.log('got some data');
         //we got data
-        res.render('index', { title: 'Build A  Pooter' });
+        res.render('index', { title: 'Build A  Pooter' , user: req.session.user});
     });
 });
 

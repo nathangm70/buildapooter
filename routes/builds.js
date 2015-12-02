@@ -8,7 +8,7 @@ var awsCredentials = require('../../amazonInfo.json');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('builds', { title: 'Build A Pooter' });
+    res.render('builds', { title: 'Build A Pooter', user: req.session.user });
 });
 
 router.post('/', function(req, res, next) {
@@ -31,7 +31,8 @@ router.post('/', function(req, res, next) {
                 powersupply: req.session.build.powersupply, discdrive: req.session.build.discdrive, processor: req.session.build.processor,
                 monitor: req.session.build.monitor, keyboard: req.session.build.keyboard, webcam: req.session.build.webcam,
                 headset: req.session.build.headset, computermouse: req.session.build.computermouse,
-                awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
+                awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId,
+                user: req.session.user
             });
         break;
     }

@@ -5,7 +5,7 @@ var SocketConnector = require('../Objects/SocketConnector');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('login', { title: 'Build A Pooter' });
+    res.render('login', { title: 'Build A Pooter' , user: req.session.user});
 });
 
 router.post('/', function(req, res){
@@ -24,11 +24,11 @@ router.post('/', function(req, res){
         switch( data.toString() ) {
             case '-1':
                 //login failed
-                res.render('login', {title: 'Build A Pooter'});
+                res.render('login', {title: 'Build A Pooter', user: req.session.user});
                 break;
             default :
                 req.session.user = JSON.parse(data);
-                res.render('index', {title: 'Build A Pooter'});
+                res.render('index', {title: 'Build A Pooter', user: req.session.user});
                 break;
         }
     });
