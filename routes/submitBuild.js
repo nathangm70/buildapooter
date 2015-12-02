@@ -42,6 +42,8 @@ router.post('/', function(req, res){
     socket.on('data', function(data){
        //do some things
         console.log('got some data');
+        //we got data
+        res.render('index', { title: 'Build A  Pooter' });
     });
 });
 
