@@ -25,8 +25,8 @@
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li ><a href="/">Home<span class="sr-only">(current)</span></a></li>
-				<li class="active"><a href="/createBuild">Build</a></li>
-				<li><a href="/builds">Saved Builds</a></li>
+				<li><a href="/buildAPooter">Build</a></li>
+				<li class="active"><a href="/builds">Saved Builds</a></li>
 				<li><a href="/about">About</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -52,6 +52,12 @@
 </div>
 <h1 class="sub">Select Computer Components:</h1>
 
+<div align="center" style="font-size: 20px; margin: 5px 0px;">
+	<form action="/submitBuild" method="post">
+		Build Name:<input name="buildName" type="text"/>
+		<input class="btn btn-default" type="submit" value="Save Build">
+	</form>
+</div>
 <div class="container" style="max-width:700px;">
 	<!--COMPUTER CASES-->
 	<table class="table">
@@ -181,7 +187,7 @@
 	</table>
 
 	<!-- PERIPHERALS!!!!!!!!!!!!!!!!!!!!!!!!!-->
-	<% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive ){ %>
+	<% if( computercase && processor && motherboard && ram && powersupply && graphicscard && harddrive ){ %>
 
 	<h1 class="sub">Select your peripherals:</h1>
 	<div id="container">
@@ -234,17 +240,6 @@
 				<td class="center itemName"> <%= webcam.partName %></td>
 				<td align="right" class="price"><%= webcam.price %></td>
 				<% } %>
-
-				<td>Mouse</td>
-				<td><% if(computermouse){ %>
-					<img src="<%= computermouse.smallImage %>" style="float: left"/> <%= computermouse.partName %><br><%= computermouse.price %>
-					<% } %></td>
-				<td>
-					<form action="/createBuild" method="post">
-						<input type="hidden" value="Wire Mouse" name="search">
-						<input type="submit" value="Select">
-					</form>
-				</td>
 			</tr>
 		</table>
 		<table class="table">
@@ -270,7 +265,7 @@
 				<td style="font-size:20px;"><strong>Mouse</strong></td>
 				<td></td>
 				<form action="/createBuild" method="post">
-					<input type="hidden" value="Computermouse" name="search">
+					<input type="hidden" value="Wire Mouse" name="search">
 					<td align="right"> <input class="btn btn-default" type="submit" value="Select"></td>
 				</form>
 			</tr>

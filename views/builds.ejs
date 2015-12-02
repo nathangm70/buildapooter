@@ -55,6 +55,7 @@
 			<h1 class="sub">User Saved Builds:</h1>
 			<div id="builds">
 				<table align="center">
+					<!--
 					<tr>
 						<td>Title</td>
 						<td>Image</td>
@@ -71,12 +72,13 @@
 						<td>Image</td>
 						<td>Details</td>
 					</tr>
+					-->
 				</table>
 			</div>
-			<div>
+			<div align="center">
 				<form action="/builds" method="post">
 					<input type="hidden" value="createbuild" name="option"/>
-					<input type="submit" value="createbuild"/>
+					<input class="btn btn-default type" type="submit" value="createbuild"/>
 				</form>
 			</div>
 		</div>
