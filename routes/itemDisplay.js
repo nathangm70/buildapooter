@@ -49,7 +49,7 @@ router.post('/', function(req, res){
         case 'Headset':
             req.session.headset = JSON.parse(req.body.selectedPart);
             break;
-        case 'Computermouse':
+        case 'Wire Mouse':
             req.session.computermouse = JSON.parse(req.body.selectedPart);
             break;
     }

@@ -181,7 +181,7 @@
             </table>
 
             <!-- PERIPHERALS!!!!!!!!!!!!!!!!!!!!!!!!!-->
-            <% if( computercase || processor || motherboard || ram || powersupply || graphicscard || harddrive ){ %>
+            <% if( computercase && processor && motherboard && ram && powersupply && graphicscard && harddrive ){ %>
 
             <h1 class="sub">Select your peripherals:</h1>
             <div id="container">
@@ -234,17 +234,6 @@
                         <td class="center itemName"> <%= webcam.partName %></td>
                         <td align="right" class="price"><%= webcam.price %></td>
                         <% } %>
-
-                        <td>Mouse</td>
-                        <td><% if(computermouse){ %>
-                            <img src="<%= computermouse.smallImage %>" style="float: left"/> <%= computermouse.partName %><br><%= computermouse.price %>
-                            <% } %></td>
-                        <td>
-                            <form action="/buildAPooter" method="post">
-                                <input type="hidden" value="Wire Mouse" name="search">
-                                <input type="submit" value="Select">
-                            </form>
-                        </td>
                     </tr>
                 </table>
                 <table class="table">
@@ -270,7 +259,7 @@
                         <td style="font-size:20px;"><strong>Mouse</strong></td>
                         <td></td>
                         <form action="/buildAPooter" method="post">
-                            <input type="hidden" value="Computermouse" name="search">
+                            <input type="hidden" value="Wire Mouse" name="search">
                             <td align="right"> <input class="btn btn-default" type="submit" value="Select"></td>
                         </form>
                     </tr>
