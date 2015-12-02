@@ -38,7 +38,7 @@ router.post('/', function(req, res)
             if(data.toString() == '1'){
                 //account created successfully
                 console.log('we made it baby');
-                res.render('index', { title: 'Build A Pooter'});
+                res.render('index', { title: 'Build A Pooter', user: req.session.user});
             } else if(data.toString() == '-1'){
                 //email / username already in use
                 console.log('we failed baby');
