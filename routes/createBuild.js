@@ -1,40 +1,31 @@
+/**
+ * Created by Nathan on 2015-11-29.
+ */
 var express = require('express');
 var router = express.Router();
 
-var ComputerBuild = require('../Objects/ComputerBuild');
-var ComputerPart = require('../Objects/ComputerPart');
+var itemSearchHelper = require('../ItemSearch/AmazonItemSearcher');
+var NewComputerPart = require('../Objects/ComputerPart');
 
 var awsCredentials = require('../../amazonInfo.json');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('builds', { title: 'Build A Pooter' });
+    res.render('createBuild', {
+        title: 'Build A Pooter', computercase: req.session.build.computercase,
+        motherboard: req.session.build.motherboard, ram: req.session.build.ram,
+        graphicscard: req.session.build.graphicscard, harddrive: req.session.build.harddrive,
+        powersupply: req.session.build.powersupply, discdrive: req.session.build.discdrive, processor: req.session.build.processor,
+        monitor: req.session.build.monitor, keyboard: req.session.build.keyboard, webcam: req.session.build.webcam,
+        headset: req.session.build.headset, computermouse: req.session.build.computermouse,
+        awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
+    });
 });
 
 router.post('/', function(req, res, next) {
-    //posted back do some stuff or something
-    //like we probably want create build here so lets move to a page like build a pooter where they make the build
-    //actually lets just copy and paste the page and have it save stuff in
-    switch (req.body.option){
-        case 'createbuild':
-            //go to the page build the case use something else that we dont have yet to make it instead of something
-            //in the session
-            console.log('creating a build');
-            //create a computer build object because i dunno whats wrong with mystupid session
-            var computerBuild = new ComputerBuild();
-            req.session.build = computerBuild;
-
-            res.render('createBuild', {
-                title: 'Build A Pooter', computercase: req.session.build.computercase,
-                motherboard: req.session.build.motherboard, ram: req.session.build.ram,
-                graphicscard: req.session.build.graphicscard, harddrive: req.session.build.harddrive,
-                powersupply: req.session.build.powersupply, discdrive: req.session.build.discdrive, processor: req.session.build.processor,
-                monitor: req.session.build.monitor, keyboard: req.session.build.keyboard, webcam: req.session.build.webcam,
-                headset: req.session.build.headset, computermouse: req.session.build.computermouse,
-                awsSecret: awsCredentials.awsSecret, assocId: awsCredentials.assocId, awsId: awsCredentials.awsId
-            });
-        break;
-    }
+    itemSearchHelper.searchForItemNamed(req.body.search, function(err, results){
+        var items = ItemSearchCallback(err, results);
+        res.render('itemBuildDisplay', {items: items, part: req.body.search});
+    });
 });
 
 function ItemSearchCallback(err, results){
@@ -42,7 +33,7 @@ function ItemSearchCallback(err, results){
 
     for (var i = 0; i < results.ItemSearchResponse.Items[0].Item.length; i++) {
 
-        var part = new ComputerPart();
+        var part = NewComputerPart();
 
         //grab the name and the title of the item
         //compCase.name = results.ItemSearchResponse.Items[0].Item[i].Name;
@@ -92,7 +83,6 @@ function ItemSearchCallback(err, results){
     }
     //now that we have our parts array populated lets return this
     return parts;
-
 }
 
 module.exports = router;

@@ -12,7 +12,10 @@ var createAccount = require('./routes/createAccount');
 var login = require('./routes/login');
 var builds = require('./routes/builds');
 var itemDisplay = require('./routes/itemDisplay');
+var itemBuildDisplay = require('./routes/itemBuildDisplay');
 var about = require('./routes/about');
+var createBuild = require('./routes/createBuild');
+var submitBuild = require('./routes/submitBuild');
 
 var app = express();
 //setup session information
@@ -40,7 +43,10 @@ app.use('/createAccount', createAccount);
 app.use('/login', login);
 app.use('/builds', builds);
 app.use('/itemDisplay', itemDisplay);
+app.use('/createBuild', createBuild);
 app.use('/about', about);
+app.use('/itemBuildDisplay', itemBuildDisplay);
+app.use('/submitBuild', submitBuild);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

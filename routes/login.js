@@ -17,6 +17,7 @@ router.post('/', function(req, res){
     var socket = socketConnector.getSocket();
     socket.write('2\n');
     socket.write(JSON.stringify(userInfo) + '\n');
+    socket.write('yes\n');
     socket.on('data', function(data){
         console.log('Data: ' + data);
 
