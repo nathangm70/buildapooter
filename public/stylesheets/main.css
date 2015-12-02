@@ -8,6 +8,11 @@ body{background-image:url("../images/background2.jpg");font-family: "Palatino Li
 #homeTable a{height:100%;width:100%;opacity:.6;display:block;background:whitesmoke;font-size:50px;color:black;text-decoration: none;text-shadow:3px 3px grey;}
 #homeTable a:hover{opacity:1;background-color:lightskyblue}
 #homeTable a:hover p{visibility: visible}
+
+.caro a{height:100%;width:100%;opacity:.6;display:block;background:whitesmoke;font-size:50px;color:black;text-decoration: none;text-shadow:3px 3px grey;}
+.caro a:hover{opacity:1;background-color:lightskyblue}
+.caro a:hover p{visibility: visible}
+
 .desc{font-size:20px; text-shadow:0px 0px; visibility: hidden}
 .sub{text-align:center;}
 .submit_div{cursor:pointer}
@@ -19,8 +24,11 @@ body{background-image:url("../images/background2.jpg");font-family: "Palatino Li
                 text-shadow:5px 5px #333333;}
 .page-header h1:hover{text-shadow:3px 3px #333333;}
 .page-header a{color:white;text-decoration: none;}
-.navbar-default { background-color: lightskyblue;  border-color: #030033;  }
-
+.navbar-default { background-color: lightskyblue;  border-color: #030033; }
+.maxImg{width:200px;}
+.center{text-align:center}
+.itemName{font-size:24px}
+.buildTitle{text-align:center;font-size:25px}
 
 
 @media only screen and (max-width: 450px){
@@ -35,6 +43,8 @@ body{background-image:url("../images/background2.jpg");font-family: "Palatino Li
 
     .page-header{font-size:30px;letter-spacing:0px;margin-top:-100px;}
     .table tr{margin-top:10px;}
+    .itemName{font-size:18px}
+
 }
 
 
