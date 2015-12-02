@@ -29,6 +29,7 @@
                         <li><a href="/">Home<span class="sr-only">(current)</span></a></li>
                         <li  class="active"><a href="/buildAPooter">Build</a></li>
                         <li><a href="/builds">Saved Builds</a></li>
+                        <li><a href="/about">About</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/login">Login</a></li>
@@ -54,12 +55,12 @@
 
             <% if(items) { %>
             <% for(var i = 0; i < items.length; i++) { %>
-        <div class="submit_div container">
+        <div class="submit_div container" style="max-width:800px">
         <table class="table table-hover">
             <tr>
                 <form method="post" action="itemDisplay">
                     <td class="imageSize"><img id="imgHover" src="<%= items[i].smallImage %>" data-thumbnail-sml="<%= items[i].smallImage %>" data-thumbnail-med="<%= items[i].mediumImage %>"/></td>
-                    <td class="itemName"><p><%= items[i].title %></p></td>
+                    <td><p><%= items[i].title %></p></td>
                     <td class="price"><p><%= items[i].price %></p></td>
 
                     <input type="hidden" value="<%= JSON.stringify(items[i]) %>" name="selectedPart">
