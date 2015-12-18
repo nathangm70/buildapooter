@@ -1,5 +1,5 @@
 /**
- * Created by Nathan on 2015-10-14.
+ * Created by Nathaniel Murray  on 2015-10-14.
  */
 
 /** this "class" will take in a string and preform an item search  it will also take a function in to use as a call back

@@ -1,3 +1,5 @@
+/* Created By Nathaniel Murray */
+
 var express = require('express');
 var router = express.Router();
 var SocketConnector = require('../Objects/SocketConnector');

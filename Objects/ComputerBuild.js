@@ -1,5 +1,5 @@
 /**
- * Created by natha on 2015-11-24.
+ * Created by nathaniel Murray on 2015-11-24.
  */
 var ComputerPart = require('./ComputerPart');
 

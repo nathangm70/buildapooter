@@ -1,5 +1,5 @@
 /**
- * Created by natha on 2015-10-28.
+ * Created by nathan on 2015-10-28.
  */
 
 module.exports = function() {
